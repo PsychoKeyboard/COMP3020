@@ -6,6 +6,8 @@ body, html {
 }
   
 .bg {
+    min-height: 100vh;
+
     /* The image used */
     background-image: url("bg.jpg");
   
@@ -17,4 +19,27 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+ }
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ nav img{
+    width: 150px; 
+ }
+
+ .nav-links{
+    flex: 1;
+    text-align: right;
+ }
+
+ .nav-links ul li{
+    list-style-type: none;
+    padding: 8px 12px;
+    position: relative;
  }
