@@ -8,15 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/327e1b2d51.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
   <div class="bg">
     <nav>
+      <i class="fa-solid fa-bars" onclick="menu()"></i>
       <a href = "index.html"><img src = "logo02.png" ></a>
-      <div class ="nav-links">
+      <div class ="nav-links" id ="navLinks">
         <ul>
+          <i class="fa-solid fa-bars" onclick="menu()"></i>
           <li><a href= "">HOME</a></li>
           <li><a href= "">PROFILE</a></li>
           <li><a href= "">SETTINGS</a></li>
@@ -26,6 +29,23 @@
     </nav>
   </div>
 
+  <!-- JavaScript-->>
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    var hidden = true;
+
+    function menu(){
+      if(hidden){
+        navLinks.style.left = "0";
+        hidden = false;
+      }
+      else{
+        navLinks.style.left = "-200px";
+        hidden = true;
+      }
+    }
+
+  </script>
 </body>
 
 </html>

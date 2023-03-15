@@ -33,16 +33,32 @@ nav {
     width: 150px; 
     position: fixed;
     top: 0;
-    left: 0;
+    left: 30px;
  }
 
 .nav-links{
-    flex: 1;
-    text-align: right;
+    position: absolute;
+    background: #f44336;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    left: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
  }
+
+nav i{
+    color: white;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
 
 .nav-links ul li{
     list-style-type: none;
+    top: 30px;
     padding: 8px 12px;
     position: relative;
 }
