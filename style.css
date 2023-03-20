@@ -7,20 +7,18 @@ body, html {
 }
   
 .bg {
-    min-height: 100vh;
 
     /* The image used */
-    background-image: url("bg.jpg");
+    background-image: url("bg04.png");
   
     /* Full height */
     height: 100%;
     width: 100%;
-  
     /* Center and scale the image nicely */
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
+    background-size: cover;
  }
 
 nav {
@@ -70,9 +68,10 @@ nav i{
     font-size: 13px;
 }
 
-.fridge{
+.bg .fridge img{
     position: absolute;
-
-    top: 10%;
-    left: 10%;
+    /* 700 x 320 is close. aspect ratio == 0.457*/
+    height: 700px;
+    width: 320px;
+    left: 77%;
 }
