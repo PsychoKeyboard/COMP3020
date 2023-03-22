@@ -1,0 +1,45 @@
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.07rem;
+  border: 20.1px solid #ffffffe7;
+  border-radius: 10px;
+}
+
+::placeholder {
+  color: #243c75e7;
+  size: 5px;
+  font-style: italic;
+  font-weight: 370;
+}
+
+input {
+  color: #243c75e7;
+  size: 5px;
+}
+
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 0px solid #243c75e7;
+  background-color: #ffffffe7;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.card > .header {
+  margin-bottom: 0.25rem;
+  color: #243c75e7;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-weight: 370;
+}
+
+.hide {
+  display: none;
+}

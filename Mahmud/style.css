@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: contain;
+  min-height: 100vh;
+  padding: 5%;
+  background-image: linear-gradient(
+      rgba(24, 28, 51, 0.1),
+      rgba(24, 28, 51, 0.1)
+    ),
+    url(images/Copy\ of\ RecipeBook.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.search-bar {
+  width: fit-content;
+  position: top;
+  height: fit-content;
+  max-width: fit-content;
+  background: rgba(6, 39, 77, 0.8);
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 3px 3px;
+  backdrop-filter: blur(4px) saturate(180%);
+  margin-right: 10%;
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color: #243c75e7;
+}
+
+::placeholder {
+  color: #243c75e7;
+  size: 5px;
+}
+
+.search-bar button img {
+  width: 30px;
+  color: #ffffffe7;
+  align-items: center;
+  display: flex;
+  background: transparent;
+}
+
+.search-bar button {
+  border: 0;
+  border-radius: 55%;
+  width: fit-content;
+  height: fit-content;
+  background: #243c75e7;
+  cursor: pointer;
+  display: contain;
+  align-items: center;
+}
