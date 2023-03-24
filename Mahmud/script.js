@@ -13,14 +13,14 @@ searchInput.addEventListener("input", e => {
   })
 })
 
-fetch("https://jsonplaceholder.typicode.com/users")
+fetch("https://mockend.com/madaualiyu/3020/posts")
   .then(res => res.json())
   .then(data => {
     users = data.map(user => {
       const card = userCardTemplate.content.cloneNode(true).children[0]
       const header = card.querySelector("[data-header]")
-      header.textContent = user.name
+      header.textContent = user.ingredient
       userCardContainer.append(card)
-      return { name: user.name, element: card }
+      return { name: user.ingredient, element: card }
     })
   })
