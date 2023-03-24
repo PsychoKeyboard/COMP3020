@@ -1,50 +1,96 @@
-body {
-    background-color:#e3effa;
-    color: black;
-    font-family:Courier;
+
+@font-face {
+    font-family: "Cookie Crisp";
+    src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
 }
 
-h1 {
-    text-align:center;
+:root {
+    --background: #1f1e1e;
+    --hover-bg: #167880;
+    --border: #77a9b8;
+    --text-color: #E5F4FF;
+    --main-title: #c8f2ff;
+    --second-title: #f2ffff;
+    --bright-orange: #FF7E35;
+    --red: #EC3535;
+    --darkred: #CB3535;
+    --gray: #404040;
 }
 
-a:link {
-    color: #03bcbc;
-    text-decoration:none;
+body{
+    background-color: var(--background);
+    color: var(--text-color)
 }
 
-a:visited {
-    color: #50a0a3;
-    text-decoration:none;
-    target="_blank";
+.kitchen-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.buttonleft {
-    background:#ffffff00;
-    border: 5px double black;
-    border-radius: 3px;
-    top:auto;
-    left:auto;
+.title{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    color: var(--main-title);
+    font-size: 34px;
+    font-family: "Cookie Crisp";
+    margin-bottom:25px;
+    border-bottom:2px solid var(--border);
 }
 
-.buttonright {
-    background:#ffffff00;
-    border: 5px double black;
-    border-radius: 3px;
-    top:auto;
-    right:0;
+.tile-title {
+    padding-left: 20px;
+    font-family: "Cookie Crisp";
+    font-size: 30px;
+    color: var(--second-title);
 }
 
-.button:hover {
-    background-color: black;
+    .tile-title h3 {
+        border-bottom: 1px solid var(--green);
+        margin-right: 20px;
+        padding-bottom: 5px;
+    }
+    
+.tile-content{
+    font-family: "Cookie Crisp";
+    font-size: 24px;
+    border-bottom: 2px solid var(--border);
 }
 
-li {
-    list-style-type:square;
+div.scrollmenu{
+    height: 100px;
+    overflow:auto;
+    white-space: nowrap;
+    font-family: "Cookie Crisp";
+    font-size: 24px;
 }
 
-table, th, td{
-    border:1px solid black;
-    border-radius: 5px;
-    table-layout: fixed;
+div.scrollmenu a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
 }
+
+div.scrollmenu a:hover{
+    background-color: var(--hover-bg);
+    color:#ebf5e9;
+}
+
+.tile{
+    display: block;
+    width:150px;
+    font-family: "Cookie Crisp";
+    font-size: 24px;
+}
+
+@media screen and (min-width: 1080px) {
+    .kitchen-container{
+        flex-direction: row;
+    }
+}
+
+
