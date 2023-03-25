@@ -6,10 +6,18 @@ function searchFunction(ingredientsList, recipeList){
     //~math~ 
     for(var i = 0; i < recipeList.length; i++){
         recipe = recipeList[i];
-        for(var j =0; j < recipe.ingredients.length; j++){
-            //if recipe.ingredient[j] is in List, recipe.priority += ingredient.priority;
-        }
     }
-    return recipeList;
+    recipeNew = new Recipe()
 }
 
+function includes(ingredientsList, ingredient){
+    const result = ingredientsList.find(({name}) => name === ingredient);
+    num = 0;
+    if(result === 'undefined') {
+        num = -1;
+    }
+    else{
+        num = result.priority;
+    }
+    return num;
+}
