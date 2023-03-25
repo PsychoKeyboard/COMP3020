@@ -1,1 +1,1 @@
-document.getElementById("milk").innerHTML = "this bitch";
+document.getElementById("milk").innerHTML = "this";

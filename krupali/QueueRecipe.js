@@ -16,8 +16,3 @@ class QueueRecipe{
     }
 }
 
-class Recipe{
-    constructor(recipeName){
-
-    }
-}
