@@ -3,6 +3,45 @@ document.getElementById("cheese").innerHTML = "this";
 //ingredients
 var cheese;
 
+//Banana Bread
+var banana;
+var butter;
+var bakingSoda;
+var salt;
+var sugar;
+var egg;
+var vanilla;
+var flour;
+//Pizza Dough
+var yeast;
+var garlicPowder;
+var oliveOil;
+//Italian Caprese Pasta Salad
+var grapeTomatoes;
+var mozzarella;
+var basilpesto;
+var oregano;
+var pasta;
+var spiralPasta;
+var gemelliPasta;
+//vMomos
+var ginger;
+var garlic;
+var vinegar;
+var soySauce;
+var blackPepper;
+var oil;
+var mushrooms;
+var onion;
+//Pancakes
+var milk;
+var bakingPowder;
+//Burger
+var ketchup;
+var shrimp;
+var potato;
+var briocheBuns;
+
 //recipes
 var pbjSandwich;
 var gsBurger;
@@ -200,5 +239,5 @@ function includes(ingredientsList, ingredient){
 }
 
 function display(){
-    
+
 }
