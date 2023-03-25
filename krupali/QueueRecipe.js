@@ -1,4 +1,4 @@
-class QueueRecipe{
+class Recipe{
     constructor(recipeName, ingredientsList, priority){
         this.name = recipeName;
         this.ingredients = ingredientsList;
