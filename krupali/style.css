@@ -11,7 +11,7 @@
     --text-color: #E5F4FF;
     --main-title: #c8f2ff;
     --second-title: #f2ffff;
-    --bright-orange: #FF7E35;
+    --checked: #FF7E35;
     --red: #EC3535;
     --darkred: #CB3535;
     --gray: #404040;
@@ -74,6 +74,7 @@ div.scrollmenu a{
     text-align: center;
     padding: 14px;
 }
+
 
 div.scrollmenu a:hover{
     background-color: var(--hover-bg);
