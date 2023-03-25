@@ -41,6 +41,10 @@ var ketchup;
 var shrimp;
 var potato;
 var briocheBuns;
+//Protein shake
+var cocoaPowder;
+var chiaSeed;
+var hempSeed;
 
 //recipes
 var pbjSandwich;
