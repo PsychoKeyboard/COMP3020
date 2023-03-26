@@ -78,7 +78,6 @@ div.scrollmenu a{
 
 div.scrollmenu a:hover{
     background-color: var(--hover-bg);
-    color:#ebf5e9;
 }
 
 .tile{

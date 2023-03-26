@@ -140,13 +140,14 @@ var priorityRecipesList;
 var selectedIngredients;
 
 function clicked(num){
-    allIngredients.list[Number(num)].check();
-    document.getElementById("sugar").innerHTML = "sugar is checked?" + sugar.checked;
+    allIngredients.list[num].check();
+    //document.getElementById("sugar").innerHTML = "sugar is checked?" + sugar.checked;
 }
 
 function generateAll(){
     class Ingredient{
-        constructor(name, priority){
+        constructor(id, name, priority){
+            this.id = id;
             this.name = name;
             this.checked = false;
             this.priority = priority;
@@ -156,10 +157,12 @@ function generateAll(){
             if (this.checked == false){
                 this.checked = true;
                 this.priority = 1;
+                document.getElementById(this.id).style="background-color:var(--hover-bg);";
             }
             else if (this.checked == true){
                 this.checked = false;
                 this.priority = 0;
+                document.getElementById(this.id).style="background-color:var(--background);";
             }
         }
     }
@@ -250,124 +253,127 @@ function generateAll(){
     }
 
     //ingredients
-    cheese = new Ingredient("cheese", 0);
+    cheese = new Ingredient("cheese", "cheese", 0);
     //banana bread
-    banana = new Ingredient("Banana", 1);
-    butter = new Ingredient("Butter", 0);
-    bakingSoda = new Ingredient("Baking Soda", 0);
-    salt = new Ingredient("Salt", 1);
-    sugar = new Ingredient("Sugar", 1);
-    egg = new Ingredient("Eggs", 1);
-    vanilla = new Ingredient("Vanilla", 0);
-    flour = new Ingredient("Flour", 0);
+    banana = new Ingredient("banana", "Banana", 1);
+    butter = new Ingredient("butter", "Butter", 0);
+    bakingSoda = new Ingredient("bakingSoda", "Baking Soda", 0);
+    salt = new Ingredient(salt, "Salt", 1);
+    sugar = new Ingredient("sugar", "Sugar", 1);
+    egg = new Ingredient("egg", "Eggs", 1);
+    vanilla = new Ingredient("vanilla", "Vanilla", 0);
+    flour = new Ingredient("flour", "Flour", 0);
 
     //Pizza Dough
-    yeast = new Ingredient("Yeast", 0);
-    garlicPowder = new Ingredient("Garlic Powder", 0);
-    oliveOil = new Ingredient("Olive Oil", 0);
+    yeast = new Ingredient("yeast", "Yeast", 0);
+    garlicPowder = new Ingredient("garlicPowder", "Garlic Powder", 0);
+    oliveOil = new Ingredient("oliveOil", "Olive Oil", 0);
 
     //Italian Caprese Pasta Salad
-    grapeTomatoes = new Ingredient("Grape Tomatoes", 0);
-    mozzarella = new Ingredient("Mozzarella", 0);
-    basilPesto = new Ingredient("Basil Pesto", 0);
-    oregano = new Ingredient("Oregano", 0);
-    pasta = new Ingredient("Pasta", 1);
-    spiralPasta = new Ingredient("Spiral Pasta", 0);
-    gemelliPasta = new Ingredient("Gamelli Pasta", 0);
+    grapeTomatoes = new Ingredient("grapeTomatoes", "Grape Tomatoes", 0);
+    mozzarella = new Ingredient("mozzarella", "Mozzarella", 0);
+    basilPesto = new Ingredient("basilPesto", "Basil Pesto", 0);
+    oregano = new Ingredient("oregano", "Oregano", 0);
+    pasta = new Ingredient("pasta", "Pasta", 1);
+    spiralPasta = new Ingredient("spiralPasta", "Spiral Pasta", 0);
+    gemelliPasta = new Ingredient("gemelliPasta", "Gamelli Pasta", 0);
 
     //vMomos
-    ginger = new Ingredient("Ginger", 0);
-    garlic = new Ingredient("Garlic", 0);
-    vinegar = new Ingredient("Vinegar", 0);
-    soySauce = new Ingredient("Soy Sauce", 0);
-    blackPepper = new Ingredient("Black Pepper", 1);
-    oil = new Ingredient("Oil", 1);
-    mushrooms = new Ingredient("Mushrooms", 0);
-    onion = new Ingredient("Onions", 1);
+    ginger = new Ingredient("ginger","Ginger", 0);
+    garlic = new Ingredient("garlic","Garlic", 0);
+    vinegar = new Ingredient("vinegar","Vinegar", 0);
+    soySauce = new Ingredient("soySauce","Soy Sauce", 0);
+    blackPepper = new Ingredient("blackPepper","Black Pepper", 1);
+    oil = new Ingredient("oil","Oil", 1);
+    mushrooms = new Ingredient("mushrooms","Mushrooms", 0);
+    onion = new Ingredient("onion","Onions", 1);
 
     //Pancakes
-    milk = new Ingredient("Milk", 1);
-    bakingPowder = new Ingredient("Baking Powder", 0);
+    milk = new Ingredient("milk","Milk", 1);
+    bakingPowder = new Ingredient("bakingPowder","Baking Powder", 0);
 
     //Burger
-    ketchup = new Ingredient("Ketchup", 1);
-    shrimp = new Ingredient("Shrimps", 0);
-    potato = new Ingredient("Potato", 1);
-    briocheBuns = new Ingredient("Brioche Buns", 0);
+    ketchup = new Ingredient("ketchup","Ketchup", 1);
+    shrimp = new Ingredient("shrimp","Shrimps", 0);
+    potato = new Ingredient("potato","Potato", 1);
+    briocheBuns = new Ingredient("briocheBuns","Brioche Buns", 0);
 
     //Protein shake
-    cocoaPowder = new Ingredient("Cocoa Powder", 0);
-    chiaSeed = new Ingredient("Chia Seed", 0);
-    hempSeed = new Ingredient("Hemp Seed", 0);
+    cocoaPowder = new Ingredient("cocoaPowder","Cocoa Powder", 0);
+    chiaSeed = new Ingredient("chiaSeed","Chia Seed", 0);
+    hempSeed = new Ingredient("hempSeed","Hemp Seed", 0);
 
     //French Toast
-    cream = new Ingredient("Cream", 0);
-    onionPowder = new Ingredient("Onion Powder", 0);
-    parsley = new Ingredient("Parsley", 0);
-    paprika = new Ingredient("Paprika", 0);
-    bread = new Ingredient("Bread", 1);
+    cream = new Ingredient("cream","Cream", 0);
+    onionPowder = new Ingredient("onionPowder","Onion Powder", 0);
+    parsley = new Ingredient("parsley","Parsley", 0);
+    paprika = new Ingredient("paprika","Paprika", 0);
+    bread = new Ingredient("bread","Bread", 1);
 
     //jRice
-    redPepper = new Ingredient("Red Pepper", 1);
-    tomato = new Ingredient("Tomato", 1);
-    rice = new Ingredient("Rice", 1);
-    curryPowder = new Ingredient("Curry Powder", 0);
-    bouillonPowder = new Ingredient("Bouillon Powder", 0);
-    thyme = new Ingredient("Thyme", 0);
-    greenPeas = new Ingredient("Green Peas", 0);
+    redPepper = new Ingredient("redPepper","Red Pepper", 1);
+    tomato = new Ingredient("tomato","Tomato", 1);
+    rice = new Ingredient("rice","Rice", 1);
+    curryPowder = new Ingredient("curryPowder","Curry Powder", 0);
+    bouillonPowder = new Ingredient("bouillonPowder","Bouillon Powder", 0);
+    thyme = new Ingredient("thyme","Thyme", 0);
+    greenPeas = new Ingredient("greenPeas","Green Peas", 0);
+
+    breadcrumbs = new Ingredient("breadcrumbs","Bread Crumbs", 0);
+    chickenTenderloins = new Ingredient("chickenTenderloins","Chicken Tenderloins", 0);
 
     //others
-    cheddar= new Ingredient("Cheddar", 0);
-    cabbage= new Ingredient("Cabbage", 0);
-    bacon= new Ingredient("Bacon", 0);
-    chickenBreast= new Ingredient("Chicken Breadt", 0);
-    groundBeef= new Ingredient("Ground Beef", 0);
-    groundTurkey= new Ingredient("Ground Turkey", 0);
-    hotDog= new Ingredient("Hot Dog", 0);
-    pepperoni= new Ingredient("Pepperoni", 0);
-    ham= new Ingredient("Ham", 0);
-    lamb= new Ingredient("Lamb", 0);
-    sausage= new Ingredient("Sausage", 0);
-    salami= new Ingredient("Salami", 0);
-    steak= new Ingredient("Steak", 0);
-    ravioli= new Ingredient("Raviolli", 0);
-    barley= new Ingredient("Barley", 0);
-    brownRice= new Ingredient("Brown Rice", 0);
-    lasagnaNoodles= new Ingredient("Lasagna Noodles", 0);
-    orzo= new Ingredient("Orzo", 0);
-    whiteRice= new Ingredient("White Rice", 0);
-    eggNoodles= new Ingredient("Egg Noodles", 0);
-    gnocchi= new Ingredient("Gnocchi", 0);
-    spaghettiNoodles= new Ingredient("Spagetti Noodles", 0);
-    wildRice= new Ingredient("Wild Rice", 0);
-    rotiniNoodles= new Ingredient("Rotini Noodles", 0);
-    bagels= new Ingredient("Bagels", 0);
-    buns= new Ingredient("Buns", 0);
-    eggRollWraps= new Ingredient("Egg Roll Wraps", 0);
-    pizzaCrust= new Ingredient("Pizza Crust", 0);
-    wontonWrappers= new Ingredient("Wonton Wrappers", 0);
-    muffins= new Ingredient("Muffins", 0);
-    rolls= new Ingredient("Rolls", 0);
-    ryeBread= new Ingredient("Rye Bread", 0);
-    mint= new Ingredient("Mint", 0);
-    basil= new Ingredient("Basil", 0);
-    cajunSeasoning= new Ingredient("Cajun Seasoning", 0);
-    chives= new Ingredient("Chives", 0);
-    italianSeasoning= new Ingredient("Italian Seasoning", 0);
-    nutmeg= new Ingredient("Nutmeg", 0);
-    paprika= new Ingredient("Paprika", 0);
-    peppercorns= new Ingredient("Peppercorns", 0);
-    chilliPowder= new Ingredient("Chilli Powder", 0);
-    cinnamon= new Ingredient("Cinnamon", 0);
-    cumin= new Ingredient("Cumin", 0);
-    dill= new Ingredient("Dill", 0);
-    meatSeasoning= new Ingredient("Meat Seasoning", 0);
-    hotSauce= new Ingredient("Hot Sauce", 0);
-    mustard= new Ingredient("Mustard", 0);
-    mayo= new Ingredient("Mayo", 0);
-    saladDressing= new Ingredient("Salad Dressing", 0);
-    ranch= new Ingredient("Ranch", 0);
-    vinnegrette= new Ingredient("Vinnegrette", 0);
+    cheddar= new Ingredient("chedder","Cheddar", 0);
+    cabbage= new Ingredient("cabbage","Cabbage", 0);
+    bacon= new Ingredient("bacon","Bacon", 0);
+    chickenBreast= new Ingredient("chickenBreast","Chicken Breadt", 0);
+    groundBeef= new Ingredient("groundBeef","Ground Beef", 0);
+    groundTurkey= new Ingredient("groundTurkey","Ground Turkey", 0);
+    hotDog= new Ingredient("hotDog","Hot Dog", 0);
+    pepperoni= new Ingredient("pepperoni","Pepperoni", 0);
+    ham= new Ingredient("ham","Ham", 0);
+    lamb= new Ingredient("lamb","Lamb", 0);
+    sausage= new Ingredient("sausage","Sausage", 0);
+    salami= new Ingredient("salami","Salami", 0);
+    steak= new Ingredient("steak","Steak", 0);
+    ravioli= new Ingredient("ravioli","Raviolli", 0);
+    barley= new Ingredient("barley","Barley", 0);
+    brownRice= new Ingredient("brownRice","Brown Rice", 0);
+    lasagnaNoodles= new Ingredient("lasagnaNoodles","Lasagna Noodles", 0);
+    orzo= new Ingredient("orzo","Orzo", 0);
+    whiteRice= new Ingredient("whiteRice","White Rice", 0);
+    eggNoodles= new Ingredient("eggNoodles","Egg Noodles", 0);
+    gnocchi= new Ingredient("gnocchi","Gnocchi", 0);
+    spaghettiNoodles= new Ingredient("spaghettiNoodles","Spagetti Noodles", 0);
+    wildRice= new Ingredient("wildRice","Wild Rice", 0);
+    rotiniNoodles= new Ingredient("rotiniNoodles","Rotini Noodles", 0);
+    bagels= new Ingredient("bagels","Bagels", 0);
+    buns= new Ingredient("buns","Buns", 0);
+    eggRollWraps= new Ingredient("eggRollWraps","Egg Roll Wraps", 0);
+    pizzaCrust= new Ingredient("pizzaCrust","Pizza Crust", 0);
+    wontonWrappers= new Ingredient("wontonWrappers","Wonton Wrappers", 0);
+    muffins= new Ingredient("muffins","Muffins", 0);
+    rolls= new Ingredient("rolls","Rolls", 0);
+    ryeBread= new Ingredient("ryeBread","Rye Bread", 0);
+    mint= new Ingredient("mint","Mint", 0);
+    basil= new Ingredient("basil","Basil", 0);
+    cajunSeasoning= new Ingredient("cajunSeasoning","Cajun Seasoning", 0);
+    chives= new Ingredient("chives","Chives", 0);
+    italianSeasoning= new Ingredient("italianSeasoning","Italian Seasoning", 0);
+    nutmeg= new Ingredient("nutmeg","Nutmeg", 0);
+    paprika= new Ingredient("paprika","Paprika", 0);
+    peppercorns= new Ingredient("peppercorns","Peppercorns", 0);
+    chilliPowder= new Ingredient("chilliPowder","Chilli Powder", 0);
+    cinnamon= new Ingredient("cinnamon","Cinnamon", 0);
+    cumin= new Ingredient("cumin","Cumin", 0);
+    dill= new Ingredient("dill","Dill", 0);
+    meatSeasoning= new Ingredient("meatSeasoning","Meat Seasoning", 0);
+    hotSauce= new Ingredient("hotSauce","Hot Sauce", 0);
+    mustard= new Ingredient("mustard","Mustard", 0);
+    mayo= new Ingredient("mayo","Mayo", 0);
+    saladDressing= new Ingredient("saladDressing","Salad Dressing", 0);
+    ranch= new Ingredient("ranch","Ranch", 0);
+    vinnegrette= new Ingredient("vinnegrette","Vinnegrette", 0);
 
     //var ALL INGREDIENTS LIST
     allIngredients = new List();
