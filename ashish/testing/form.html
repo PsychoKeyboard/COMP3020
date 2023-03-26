@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Recipe Search</title>
+  </head>
+  <body>
+    <form id="ingredient-form">
+      <label>
+        <input type="checkbox" name="ingredients" value="flour">
+        Flour
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="sugar">
+        Sugar
+      </label>
+      <label>
+        <input type="checkbox" name="ingredients" value="eggs">
+        Eggs
+      </label>
+      <!-- Add more ingredient checkboxes as needed -->
+      
+      <button type="submit">Search Recipes</button>
+    </form>
+
+    <script type="module">
+      import { recipeDatabase } from './recipes.js';
+      
+      const form = document.getElementById('ingredient-form');
+      
+      function findRecipes(selectedIngredients) {
+        const matchingRecipes = recipeDatabase.filter((recipe) => {
+          // Check if all the selected ingredients are in the recipe's ingredient list
+          return selectedIngredients.every((ingredient) => recipe.ingredients.includes(ingredient));
+        });
+      
+        return matchingRecipes;
+      }
+      
+      // Listen for the form's "submit" event
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+        
+        // Get an array of all checked checkboxes with the name "ingredients"
+        const checkboxes = Array.from(form.querySelectorAll('input[type="checkbox"][name="ingredients"]:checked'));
+        
+        // Map the array of checkboxes to an array of their values (i.e. the selected ingredient names)
+        const selectedIngredients = checkboxes.map((checkbox) => checkbox.value);
+        
+        // Find recipes that can be made with the selected ingredients
+        const matchingRecipes = findRecipes(selectedIngredients);
+        
+        // Do something with the matching recipes (e.g. display them on the page)
+        console.log('Matching recipes:', matchingRecipes);
+      });
+    </script>
+  </body>
+</html>
