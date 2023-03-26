@@ -10,15 +10,16 @@ body, html {
 
     /* The image used */
     background-image: url("bg04.png");
-  
+    
+    background-size: 100% 100%;
     /* Full height */
     height: 100%;
     width: 100%;
-    /* Center and scale the image nicely */
-    background-position: center center;
+    /* Center and scale the image nicely 
+    background-position: center center;*/
     background-repeat: no-repeat;
     position: relative;
-    background-size: cover;
+    
  }
 
 nav {
@@ -70,8 +71,36 @@ nav i{
 
 .bg .fridge img{
     position: absolute;
-    /* 700 x 320 is close. aspect ratio == 0.457*/
+    /* 700 x 320 is close. aspect ratio == 0.457
     height: 700px;
     width: 320px;
-    left: 77%;
+    left: 77%;*/
+
+    top: 10.4%;
+    left: 77.2%;
+    width: 20.75%;
+    height: 78.9%;
+
+    transition: all 0.2s ease-in-out; 
+}
+
+.fridge img:hover { 
+    transform: scale(1.1); 
+    z-index: 2;
+}
+
+.bg .cabinets img{
+    position: absolute;
+
+    top: 60.9%;
+    left: 29.9%;
+    width: 46.7%;
+    height: 28.4%;
+
+    transition: all 0.2s ease-in-out; 
+}
+
+.cabinets img:hover { 
+    transform: scale(1.1); 
+    z-index: 2;
 }
