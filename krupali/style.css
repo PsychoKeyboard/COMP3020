@@ -82,15 +82,14 @@ div.scrollmenu a:hover{
 
 .tile{
     display: block;
-    width:150px;
+    width:170px;
     font-family: "Cookie Crisp";
     font-size: 24px;
 }
 
-@media screen and (min-width: 1080px) {
-    .kitchen-container{
-        flex-direction: row;
-    }
+.button{
+    font-family: "Cookie Crisp";
+    font-size: 14px;
 }
 
 

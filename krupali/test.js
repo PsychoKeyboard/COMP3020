@@ -1,5 +1,3 @@
-document.getElementById("cheese").innerHTML = "this";
-
 //ingredients
 var cheese; //0 
 
@@ -9,7 +7,7 @@ var butter; //2
 var bakingSoda; //3
 var salt; //4
 var sugar; //5
-var egg; //6
+var eggs; //6
 var vanilla; //7
 var flour; //8
 //Pizza Dough
@@ -63,7 +61,7 @@ var greenPeas; //47
 var breadcrumbs; //48
 var chickenTenderloins; //49
 //other produce
-var cheddar; //50
+var cheddarCheese; //50
 //other dairy
 var cabbage; //51
 //other meat
@@ -106,20 +104,19 @@ var cajunSeasoning; //84
 var chives; //85
 var italianSeasoning; //86
 var nutmeg; //87
-var paprika; //88
-var peppercorns; //89
-var chilliPowder; //91
-var cinnamon; //92
-var cumin; //93
-var dill; //94
-var meatSeasoning; //90
+var peppercorns; //88
+var chilliPowder; //89
+var cinnamon; //90
+var cumin; //91
+var dill; //92
+var meatSeasoning; //93
 //other condiments
-var hotSauce; //95
-var mustard; //96
-var mayo;  //97
-var saladDressing; //98
-var ranch; //99
-var vinnegrette; //100
+var hotSauce; //94
+var mustard; //95
+var mayo;  //96
+var saladDressing; //97
+var ranch; //98
+var vinaigrette; //199
 
 //recipes
 var pbjSandwich;
@@ -141,7 +138,7 @@ var selectedIngredients;
 
 function clicked(num){
     allIngredients.list[num].check();
-    //document.getElementById("sugar").innerHTML = "sugar is checked?" + sugar.checked;
+    //document.getElementById(allIngredients.list[num].id).innerHTML = allIngredients.list[num].id + " " + allIngredients.list[num].checked + " " + allIngredients.list[num].priority;
 }
 
 function generateAll(){
@@ -166,6 +163,10 @@ function generateAll(){
                 document.getElementById(this.id).style="background-color:var(--background);";
                 selectedIngredients.remove(this);
             }
+        }
+
+        toString(){
+            return this.name;
         }
     }
 
@@ -204,7 +205,11 @@ function generateAll(){
         }
 
         display(){
-            
+            var theString = "";
+            for(var i in this.list){
+                theString = theString + this.list[i].toString() + ", "; 
+            }
+            return theString;
         }
     }
 
@@ -264,9 +269,9 @@ function generateAll(){
     banana = new Ingredient("banana", "Banana", 1);
     butter = new Ingredient("butter", "Butter", 0);
     bakingSoda = new Ingredient("bakingSoda", "Baking Soda", 0);
-    salt = new Ingredient(salt, "Salt", 1);
+    salt = new Ingredient("salt", "Salt", 1);
     sugar = new Ingredient("sugar", "Sugar", 1);
-    egg = new Ingredient("egg", "Eggs", 1);
+    eggs = new Ingredient("eggs", "Eggs", 1);
     vanilla = new Ingredient("vanilla", "Vanilla", 0);
     flour = new Ingredient("flour", "Flour", 0);
 
@@ -329,7 +334,7 @@ function generateAll(){
     chickenTenderloins = new Ingredient("chickenTenderloins","Chicken Tenderloins", 0);
 
     //others
-    cheddar= new Ingredient("chedder","Cheddar", 0);
+    cheddarCheese= new Ingredient("cheddarCheese","Cheddar Cheese", 0);
     cabbage= new Ingredient("cabbage","Cabbage", 0);
     bacon= new Ingredient("bacon","Bacon", 0);
     chickenBreast= new Ingredient("chickenBreast","Chicken Breadt", 0);
@@ -379,7 +384,7 @@ function generateAll(){
     mayo= new Ingredient("mayo","Mayo", 0);
     saladDressing= new Ingredient("saladDressing","Salad Dressing", 0);
     ranch= new Ingredient("ranch","Ranch", 0);
-    vinnegrette= new Ingredient("vinnegrette","Vinnegrette", 0);
+    vinaigrette= new Ingredient("vinaigrette","Vinaigrette", 0);
 
     //var ALL INGREDIENTS LIST
     allIngredients = new List();
@@ -390,7 +395,7 @@ function generateAll(){
     allIngredients.add(bakingSoda); //3
     allIngredients.add(salt); //4
     allIngredients.add(sugar); //5
-    allIngredients.add(egg); //6
+    allIngredients.add(eggs); //6
     allIngredients.add(vanilla); //7
     allIngredients.add(flour); //8
     //Pizza Dough
@@ -444,7 +449,7 @@ function generateAll(){
     allIngredients.add(breadcrumbs); //48
     allIngredients.add(chickenTenderloins); //49
     //other produce
-    allIngredients.add(cheddar); //50
+    allIngredients.add(cheddarCheese); //50
     //other dairy
     allIngredients.add(cabbage); //51
     //other meat
@@ -487,32 +492,31 @@ function generateAll(){
     allIngredients.add(chives); //85
     allIngredients.add(italianSeasoning); //86
     allIngredients.add(nutmeg); //87
-    allIngredients.add(paprika); //88
-    allIngredients.add(peppercorns); //89
-    allIngredients.add(chilliPowder); //91
-    allIngredients.add(cinnamon); //92
-    allIngredients.add(cumin); //93
-    allIngredients.add(dill); //94
-    allIngredients.add(meatSeasoning); //90
+    allIngredients.add(peppercorns); //88
+    allIngredients.add(chilliPowder); //89
+    allIngredients.add(cinnamon); //90
+    allIngredients.add(cumin); //91
+    allIngredients.add(dill); //92
+    allIngredients.add(meatSeasoning); //93
     //other condiments
-    allIngredients.add(hotSauce); //95
-    allIngredients.add(mustard); //96
-    allIngredients.add(mayo);  //97
-    allIngredients.add(saladDressing); //98
-    allIngredients.add(ranch); //99
-    allIngredients.add(vinnegrette); //100
+    allIngredients.add(hotSauce); //94
+    allIngredients.add(mustard); //95
+    allIngredients.add(mayo);  //96
+    allIngredients.add(saladDressing); //97
+    allIngredients.add(ranch); //98
+    allIngredients.add(vinaigrette); //99
 
     //recipes
-    gsBurger = new Recipe("Golden Shrimp Burger", [egg, onion, ketchup, shrimp, potato, blackPepper, butter, buns], 0, "https://www.epicurious.com/recipes/food/views/ba-syn-crispy-golden-shrimp-burgers", "../Resourses/burger.png");
+    gsBurger = new Recipe("Golden Shrimp Burger", [eggs, onion, ketchup, shrimp, potato, blackPepper, butter, buns], 0, "https://www.epicurious.com/recipes/food/views/ba-syn-crispy-golden-shrimp-burgers", "../Resourses/burger.png");
     ckpShake = new Recipe("Chocolate Keto Protein Shake", [milk, butter, cocoaPowder, sugar, chiaSeed, hempSeed, vanilla], 0, "https://www.delish.com/cooking/recipe-ideas/a25336257/keto-protein-shake-recipe/", "../Resourses/milkshake.png" );
-    sfToast = new Recipe("Savory French Toast", [egg, cream, garlicPowder, onionPowder, parsley, paprika, blackPepper, bread, butter], 0, "https://tasty.co/recipe/savory-french-toast","../Resourses/toast.png");
+    sfToast = new Recipe("Savory French Toast", [eggs, cream, garlicPowder, onionPowder, parsley, paprika, blackPepper, bread, butter], 0, "https://tasty.co/recipe/savory-french-toast","../Resourses/toast.png");
     jRice = new Recipe("Jollof Rice", [redPepper, tomato, onion, ginger, garlic, rice, curryPowder, bouillonPowder, thyme, greenPeas, oil], 0, "https://www.simplyrecipes.com/jollof-rice-recipe-7104327", "../Resourses/Rice.png");
-    ccTenderloins = new Recipe("Crumbed Chicken Tenderloins", [egg, breadcrumbs, chickenTenderloins, oil], 0, "https://www.allrecipes.com/recipe/260625/crumbed-chicken-tenderloins-air-fried/", "../Resourses/chickenTender.png");
-    bBread = new Recipe("Banana Bread", [banana, butter, bakingSoda, sugar, egg, vanilla, flour, oliveOil], 0, "https://www.simplyrecipes.com/recipes/banana_bread/", "../Resourses/bBread.png");
+    ccTenderloins = new Recipe("Crumbed Chicken Tenderloins", [eggs, breadcrumbs, chickenTenderloins, oil], 0, "https://www.allrecipes.com/recipe/260625/crumbed-chicken-tenderloins-air-fried/", "../Resourses/chickenTender.png");
+    bBread = new Recipe("Banana Bread", [banana, butter, bakingSoda, sugar, eggs, vanilla, flour, oliveOil], 0, "https://www.simplyrecipes.com/recipes/banana_bread/", "../Resourses/bBread.png");
     pDough = new Recipe("Pizza Dough", [flour, yeast, sugar, garlicPowder], 0, "https://sugarspunrun.com/the-best-pizza-dough-recipe", "../Resourses/pDough.png");
     icpSalad = new Recipe("Italian Caprese Pasta Salad", [pasta, basilPesto, tomato, mozzarella, oregano, oil], 0, "https://anitalianinmykitchen.com/caprese-pasta-salad", "../Resourses/icpSalad.png");
     vMomos = new Recipe("Veg Momos", [flour, ginger, garlic, vinegar, soySauce, blackPepper, oil], 0, "https://www.vegrecipesofindia.com/veg-momos-recipe-vegetable-momos/#wprm-recipe-container-139104", "../Resourses/momos.png");
-    ofPancakes = new Recipe("Old Fasioned Pancakes", [flour, salt, egg, milk, sugar, bakingPowder, oil], 0, "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/", "../Resourses/pancakes.png");
+    ofPancakes = new Recipe("Old Fasioned Pancakes", [flour, salt, eggs, milk, sugar, bakingPowder, oil], 0, "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/", "../Resourses/pancakes.png");
 
     //var ALL RECIPES LIST
     allRecipes = new List();
@@ -528,6 +532,15 @@ function generateAll(){
 
     //Priority List for Recipes;
     priorityRecipesList = new PriorityList();
+    priorityRecipesList.enqueue(gsBurger);
+    priorityRecipesList.enqueue(sfToast);
+    priorityRecipesList.enqueue(jRice);
+    priorityRecipesList.enqueue(ccTenderloins);
+    priorityRecipesList.enqueue(bBread);
+    priorityRecipesList.enqueue(pDough);
+    priorityRecipesList.enqueue(icpSalad);
+    priorityRecipesList.enqueue(vMomos);
+    priorityRecipesList.enqueue(ofPancakes);
 }
 
 function search(){
@@ -545,7 +558,7 @@ function calculatePriority(ingredientsList, recipe){
     //if ingredient is missing, priority num is decreased by 1
     //super ingredients have a num of 2
     //normal ingredients have a num of 1 
-    for(var j = 0; j < recipe.ingredientsList.length; j++){
+    for(var j in recipe.ingredientsList){
         recipe.priority += includes(ingredientsList,recipe.ingredientsList[j]);
     }
 }
@@ -580,4 +593,8 @@ function display(priorityRecipesList){
         recipeCard.appendChild(recipeName);
         resultsContainer.appendChild(recipeCard);
     }
+}
+
+function showIngredients(){
+    document.getElementById("content").innerHTML = selectedIngredients.display();
 }
