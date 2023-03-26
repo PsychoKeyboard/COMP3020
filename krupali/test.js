@@ -156,12 +156,14 @@ function generateAll(){
                 this.priority = 1;
                 document.getElementById(this.id).style="background-color:var(--hover-bg);";
                 selectedIngredients.add(this);
+                updateIngredients();
             }
             else if (this.checked == true){
                 this.checked = false;
                 this.priority = 0;
                 document.getElementById(this.id).style="background-color:var(--background);";
                 selectedIngredients.remove(this);
+                updateIngredients();
             }
         }
 
@@ -188,6 +190,10 @@ function generateAll(){
                 this.priority += includes(ingredientsList,recipe.ingredient[j]);
             }
         }
+
+        toString(){
+            return this.name;
+        }
     }
 
     class List{
@@ -195,19 +201,19 @@ function generateAll(){
             this.list = new Array();
         }
     
-        add(queueIngredient){
-            this.list.push(queueIngredient);
+        add(queueObject){
+            this.list.push(queueObject);
         }
     
-        remove(queueIngredient){
-            const index = this.list.indexOf(queueIngredient);
+        remove(queueObject){
+            const index = this.list.indexOf(queueObject);
             this.list.splice(index, 1);
         }
 
-        display(){
+        displaySelected(){
             var theString = "";
             for(var i in this.list){
-                theString = theString + this.list[i].toString() + ", "; 
+                theString = theString + "<a>" + this.list[i].toString() + "</a>"; 
             }
             return theString;
         }
@@ -215,23 +221,23 @@ function generateAll(){
 
     class PriorityList{
         constructor(){
-            this.items = [];
+            this.items = new Array();
         }
     
         enqueue(recipe){
-            var contain = false;
+            // var contain = false;
     
-            for (var i = 0; i < this.items.length; i++){
-                if (this.items[i].priority > recipe.priority) {
-                    this.items.splice(i, 0, recipe);
-                    contain = true;
-                    break;
-                }
-            }
+            // for (var i = 0; i < this.items.length; i++){
+            //     if (this.items[i].priority > recipe.priority) {
+            //         this.items.splice(i, 0, recipe);
+            //         contain = true;
+            //         break;
+            //     }
+            // }
     
-            if(!contain){
+            // if(!contain){
                 this.items.push(recipe);
-            }
+            //}
         }
     
         dequeue(){
@@ -261,17 +267,25 @@ function generateAll(){
             }
             return this.items[this.items.length - 1];
         }
+
+        displayRecipes(){
+            var theString = "";
+            for(var i in this.items){
+                theString = theString + this.items[i].toString() + ", "; 
+            }
+            return theString;
+        }
     }
 
     //ingredients
     cheese = new Ingredient("cheese", "cheese", 0);
     //banana bread
-    banana = new Ingredient("banana", "Banana", 1);
+    banana = new Ingredient("banana", "Banana", 0);
     butter = new Ingredient("butter", "Butter", 0);
     bakingSoda = new Ingredient("bakingSoda", "Baking Soda", 0);
-    salt = new Ingredient("salt", "Salt", 1);
-    sugar = new Ingredient("sugar", "Sugar", 1);
-    eggs = new Ingredient("eggs", "Eggs", 1);
+    salt = new Ingredient("salt", "Salt", 0);
+    sugar = new Ingredient("sugar", "Sugar", 0);
+    eggs = new Ingredient("eggs", "Eggs", 0);
     vanilla = new Ingredient("vanilla", "Vanilla", 0);
     flour = new Ingredient("flour", "Flour", 0);
 
@@ -285,7 +299,7 @@ function generateAll(){
     mozzarella = new Ingredient("mozzarella", "Mozzarella", 0);
     basilPesto = new Ingredient("basilPesto", "Basil Pesto", 0);
     oregano = new Ingredient("oregano", "Oregano", 0);
-    pasta = new Ingredient("pasta", "Pasta", 1);
+    pasta = new Ingredient("pasta", "Pasta", 0);
     spiralPasta = new Ingredient("spiralPasta", "Spiral Pasta", 0);
     gemelliPasta = new Ingredient("gemelliPasta", "Gamelli Pasta", 0);
 
@@ -294,19 +308,19 @@ function generateAll(){
     garlic = new Ingredient("garlic","Garlic", 0);
     vinegar = new Ingredient("vinegar","Vinegar", 0);
     soySauce = new Ingredient("soySauce","Soy Sauce", 0);
-    blackPepper = new Ingredient("blackPepper","Black Pepper", 1);
-    oil = new Ingredient("oil","Oil", 1);
+    blackPepper = new Ingredient("blackPepper","Black Pepper", 0);
+    oil = new Ingredient("oil","Oil", 0);
     mushrooms = new Ingredient("mushrooms","Mushrooms", 0);
-    onion = new Ingredient("onion","Onions", 1);
+    onion = new Ingredient("onion","Onions", 0);
 
     //Pancakes
-    milk = new Ingredient("milk","Milk", 1);
+    milk = new Ingredient("milk","Milk", 0);
     bakingPowder = new Ingredient("bakingPowder","Baking Powder", 0);
 
     //Burger
-    ketchup = new Ingredient("ketchup","Ketchup", 1);
+    ketchup = new Ingredient("ketchup","Ketchup", 0);
     shrimp = new Ingredient("shrimp","Shrimps", 0);
-    potato = new Ingredient("potato","Potato", 1);
+    potato = new Ingredient("potato","Potato", 0);
     briocheBuns = new Ingredient("briocheBuns","Brioche Buns", 0);
 
     //Protein shake
@@ -319,12 +333,12 @@ function generateAll(){
     onionPowder = new Ingredient("onionPowder","Onion Powder", 0);
     parsley = new Ingredient("parsley","Parsley", 0);
     paprika = new Ingredient("paprika","Paprika", 0);
-    bread = new Ingredient("bread","Bread", 1);
+    bread = new Ingredient("bread","Bread", 0);
 
     //jRice
-    redPepper = new Ingredient("redPepper","Red Pepper", 1);
-    tomato = new Ingredient("tomato","Tomato", 1);
-    rice = new Ingredient("rice","Rice", 1);
+    redPepper = new Ingredient("redPepper","Red Pepper", 0);
+    tomato = new Ingredient("tomato","Tomato", 0);
+    rice = new Ingredient("rice","Rice", 0);
     curryPowder = new Ingredient("curryPowder","Curry Powder", 0);
     bouillonPowder = new Ingredient("bouillonPowder","Bouillon Powder", 0);
     thyme = new Ingredient("thyme","Thyme", 0);
@@ -337,7 +351,7 @@ function generateAll(){
     cheddarCheese= new Ingredient("cheddarCheese","Cheddar Cheese", 0);
     cabbage= new Ingredient("cabbage","Cabbage", 0);
     bacon= new Ingredient("bacon","Bacon", 0);
-    chickenBreast= new Ingredient("chickenBreast","Chicken Breadt", 0);
+    chickenBreast= new Ingredient("chickenBreast","Chicken Breast", 0);
     groundBeef= new Ingredient("groundBeef","Ground Beef", 0);
     groundTurkey= new Ingredient("groundTurkey","Ground Turkey", 0);
     hotDog= new Ingredient("hotDog","Hot Dog", 0);
@@ -372,7 +386,6 @@ function generateAll(){
     chives= new Ingredient("chives","Chives", 0);
     italianSeasoning= new Ingredient("italianSeasoning","Italian Seasoning", 0);
     nutmeg= new Ingredient("nutmeg","Nutmeg", 0);
-    paprika= new Ingredient("paprika","Paprika", 0);
     peppercorns= new Ingredient("peppercorns","Peppercorns", 0);
     chilliPowder= new Ingredient("chilliPowder","Chilli Powder", 0);
     cinnamon= new Ingredient("cinnamon","Cinnamon", 0);
@@ -544,13 +557,13 @@ function generateAll(){
 }
 
 function search(){
-    for(var i in allRecipes){
-        calculatePriority(selectedIngredients, allRecipes[i]);
-        if (allRecipes[i].priority > 0){
-            priorityRecipesList.enqueue(allRecipes[i]);
-        }
-    }
-    display();
+    // for(var i in allRecipes){
+    //     calculatePriority(selectedIngredients, allRecipes[i]);
+    //     if (allRecipes[i].priority > 0){
+    //         priorityRecipesList.enqueue(allRecipes[i]);
+    //     }
+    // }
+    document.getElementById("recipes").innerHTML=priorityRecipesList.displayRecipes();
 }
 
 function calculatePriority(ingredientsList, recipe){
@@ -598,3 +611,8 @@ function display(priorityRecipesList){
 function showIngredients(){
     document.getElementById("content").innerHTML = selectedIngredients.display();
 }
+
+function updateIngredients(){
+    document.getElementById("theList").innerHTML = selectedIngredients.displaySelected();
+}
+
