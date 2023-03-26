@@ -47,8 +47,4 @@ class PriorityList{
         }
         return this.items[this.items.length - 1];
     }
-
-    display(){
-
-    }
 }

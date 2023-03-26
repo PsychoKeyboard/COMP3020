@@ -1,50 +1,67 @@
 document.getElementById("cheese").innerHTML = "this";
 
 //ingredients
-var cheese;
+var cheese; //0 
 
 //Banana Bread
-var banana;
-var butter;
-var bakingSoda;
-var salt;
-var sugar;
-var egg;
-var vanilla;
-var flour;
+var banana; //1
+var butter; //2
+var bakingSoda; //3
+var salt; //4
+var sugar; //5
+var egg; //6
+var vanilla; //7
+var flour; //8
 //Pizza Dough
-var yeast;
-var garlicPowder;
-var oliveOil;
+var yeast; //9
+var garlicPowder; //10
+var oliveOil; //11
 //Italian Caprese Pasta Salad
-var grapeTomatoes;
-var mozzarella;
-var basilpesto;
-var oregano;
-var pasta;
-var spiralPasta;
-var gemelliPasta;
+var grapeTomatoes; //12
+var mozzarella; //13
+var basilpesto; //14
+var oregano; //15
+var pasta; //16
+var spiralPasta; //17
+var gemelliPasta; //18
 //vMomos
-var ginger;
-var garlic;
-var vinegar;
-var soySauce;
-var blackPepper;
-var oil;
-var mushrooms;
-var onion;
+var ginger; //19
+var garlic; //20
+var vinegar; //21
+var soySauce; //22
+var blackPepper; //23
+var oil; //24
+var mushrooms; //25
+var onion; //26
 //Pancakes
-var milk;
-var bakingPowder;
+var milk; //27
+var bakingPowder; //28
 //Burger
-var ketchup;
-var shrimp;
-var potato;
-var briocheBuns;
+var ketchup; //29
+var shrimp; //30
+var potato; //31
+var briocheBuns; //32
 //Protein shake
-var cocoaPowder;
-var chiaSeed;
-var hempSeed;
+var cocoaPowder; //33
+var chiaSeed; //34
+var hempSeed; //35
+//French Toast
+var cream; //36
+var onionPowder; //37
+var parsley; //38
+var paprika; //39
+var bread; //40
+//jRice
+var redPepper; //41
+var tomato //42
+var rice; //43
+var curryPowder; //44
+var bouillonPowder; //45
+var thyme; //46
+var greenPeas; //47
+//crumbed Chicken
+var breadcrumbs; //48
+var chickenTenderloins; //49
 
 //recipes
 var pbjSandwich;
@@ -62,6 +79,7 @@ var ofPancakes;
 var allIngredients;
 var allRecipes;
 var priorityRecipesList;
+var selectedIngredients;
 
 function clicked(num){
     allIngredients.list[Number(num)].check();
@@ -179,6 +197,7 @@ function generateAll(){
 
     //var ALL INGREDIENTS LIST
     allIngredients = new List();
+    selectedIngredients = new List();
     allIngredients.add(cheese); //0
     allIngredients.add(jam); //1
 
@@ -212,7 +231,7 @@ function generateAll(){
 
 function search(){
     for(var i in allRecipes){
-        calculatePriority(allIngredients, allRecipes[i]);
+        calculatePriority(selectedIngredients, allRecipes[i]);
         if (allRecipes[i].priority > 0){
             priorityRecipesList.enqueue(allRecipes[i]);
         }
@@ -242,6 +261,22 @@ function includes(ingredientsList, ingredient){
     return num;
 }
 
-function display(){
-
+function display(priorityRecipesList){
+    let resultsContainer = document.getElementById("results-container");
+    resultsContainer.innerHTML = "";
+    for(var i = priorityRecipesList.length - 1; i >= 0; i--){
+        //let recipe = priorityRecipesList[i];
+        let recipeCard = document.createElement("div");
+        recipeCard.classList.add("recipe-card");
+        let recipeImage = document.createElement("img");
+        recipeImage.src = priorityRecipesList[i].image;
+        recipeCard.appendChild(recipeImage);
+        recipeImage.addEventListener("click", function(){
+            window.open(priorityRecipesList[i].url);
+        });
+        let recipeName = document.createElement("h2");
+        recipeName.textContent = priorityRecipesList[i].name;
+        recipeCard.appendChild(recipeName);
+        resultsContainer.appendChild(recipeCard);
+    }
 }
