@@ -12,11 +12,22 @@
 <body>
     <button onclick="generateAll()">Start</button>
     <button onclick="search()">Get Recipes</button>
+    <button>Display Selected Items</button>
     <p id="sugar"></p>
 
     <div class="kitchen-continer">
         <div class = "title">
             Your Items
+        </div>
+
+        <div class="tile-content">
+            <div class="tile-title">
+                <h3>Selected Items</h3>
+            </div>
+
+            <div class="scrollmenu">
+                <a id="items">ITEM</a>
+            </div>
         </div>
 
         <div class="tile-content">

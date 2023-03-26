@@ -158,11 +158,13 @@ function generateAll(){
                 this.checked = true;
                 this.priority = 1;
                 document.getElementById(this.id).style="background-color:var(--hover-bg);";
+                selectedIngredients.add(this);
             }
             else if (this.checked == true){
                 this.checked = false;
                 this.priority = 0;
                 document.getElementById(this.id).style="background-color:var(--background);";
+                selectedIngredients.remove(this);
             }
         }
     }
@@ -199,6 +201,10 @@ function generateAll(){
         remove(queueIngredient){
             const index = this.list.indexOf(queueIngredient);
             this.list.splice(index, 1);
+        }
+
+        display(){
+            
         }
     }
 
