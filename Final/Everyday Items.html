@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-<title>HTML Tutorial</title>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/b4c9d10f70.js" crossorigin="anonymous">
-    </script>
-    <script src="test.js"></script>
+    <script src="https://kit.fontawesome.com/b4c9d10f70.js" crossorigin="anonymous">    </script>
+    <script src="ingredients_page.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <button class="button" onclick="generateAll()">Start</button>
-    <button class="button" onclick="search()">Get Recipes</button>
+    <style>
+        body {
+            background-image: linear-gradient(
+                rgba(200, 121, 61, 0.292),
+                rgba(200, 121, 61, 0.292)
+            )
+            ,url("../Resourses/background-blurred.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+
+    <button class="button" onclick="search(); location.href='Recipes.html'">Get Recipes</button>
 
     <div class="dropdown">
         <button class="button">Selected Items</button>
@@ -204,20 +214,6 @@
                 <a id="saladDressing" onclick="clicked(97)" class="tile">Salad Dressing</a>
                 <a id="ranch" onclick="clicked(98)" class="tile">Ranch</a>
                 <a id="vinaigrette" onclick="clicked(99)" class="tile">Vinaigrette</a>
-            </div>
-        </div>
-
-        <div class="tile-content">
-            <div class="tile-title">
-                <h3>Recipes</h3>
-            </div>
-
-            <div class="scrollmenu">
-                <a id="allRecipes">The Recipes</a>
-            </div>
-
-            <div class="scrollmenu">
-                <a id="queuedRecipes">The Shown Recipes</a>
             </div>
         </div>
    </div>
