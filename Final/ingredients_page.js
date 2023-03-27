@@ -72,7 +72,9 @@ function search(){
 
         addRecipes(){
             for(var i = 0; i < allRecipes.length; i++){
-                this.enqueue(allRecipes.list[i]);
+                if(allRecipes.list[i].percentage > 20){
+                    this.enqueue(allRecipes.list[i]);
+                }
             }
         }
     }
@@ -141,7 +143,7 @@ function generateRecipes(){
             for(var j in this.ingredients){
                 this.priority += this.ingredients[j].priority;
             }
-            this.percentage = ((this.priority)/((this.ingredients.length)-1))*100
+            this.percentage = Math.round(((this.priority)/((this.ingredients.length)-1))*100);
             return this.percentage;
         }
     }
@@ -209,7 +211,7 @@ function check(ingredient){
     else if (ingredient.checked == true){
         ingredient.checked = false;
         ingredient.priority = 0;
-        document.getElementById(ingredient.id).style="background-color:var(--background);";
+        document.getElementById(ingredient.id).style="background-color:var(--clear-bg);";
         remove(selectedIngredients, ingredient);
         sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
         updateIngredients();
