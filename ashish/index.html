@@ -15,11 +15,17 @@
 
   <div class="bg">
     <nav>
-      <i class="fa-solid fa-bars" onclick="menu()"></i>
+      <button class = "sidebarButton" type = button>
+        <i class="fas fa-bars fa-lg" style = "color:#000000;" onclick="menu()"></i>
+        <i class="fas fa-bars fa-lg" style="color: #000000;" onclick = "menu()"></i>
+      </button>
+      
       <a href = "index.html"><img src = "logo02.png" ></a>
       <div class ="nav-links" id ="navLinks">
         <ul>
-          <i class="fa-solid fa-bars" onclick="menu()"></i>
+          <button class = "sidebarButton" type = button>
+            <i class="fas fa-bars fa-lg" style = "color:#000000;" onclick="menu()"></i>
+          </button>
           <li><a href = "index.html"><img src = "logo02.png" ></a></li>
           <li><a href= "">HOME</a></li>
           <li><a href= "">PROFILE</a></li>
@@ -41,12 +47,19 @@
       </a>  
     </div>
 
+    <button class="search" type="button">
+      <a href = "../Mahmud/index.html">
+        <i class="fas fa-search fa-lg" style="color: #000000;"></i>
+      </a>
+    </button>
+
     <button class = "recipeButton" type = button>
       Get Recipes!
     </button>
 
     <button class="ingButton" type="button">
-      My Ingredients!
+      <i class="fas fa-shopping-basket" style="color: #000000;"></i>
+      Basket!
     </button>
   </div>
 

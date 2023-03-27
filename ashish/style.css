@@ -22,22 +22,34 @@ body, html {
     
  }
 
-nav {
+/*nav {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
- }
+ }*/
 
  nav img{
     width: 150px; 
     position: fixed;
     top: 0;
-    left: 30px;
+    left: 50px;
  }
 
 .nav-links{
+
+    background-image: linear-gradient(
+            rgba(100,173,156, 1.0),
+            rgba(255, 11, 11, 0.2)
+          ),
+          url("sidebar02.png");
+    
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: -100px;
+
+
     position: absolute;
-    background: #f44336;
     height: 100vh;
     width: 200px;
     top: 0;
@@ -50,8 +62,8 @@ nav {
 nav i{
     color: white;
     position: fixed;
-    top: 10px;
-    left: 10px;
+    /*top: 10px;
+    left: 10px;*/
 }
 
 
@@ -68,6 +80,7 @@ nav i{
     text-decoration: none;
     font-size: 13px;
 }
+
 
 .bg .fridge img{
     position: absolute;
@@ -106,6 +119,8 @@ nav i{
 }
 
 
+
+
  button{
   align-self: center;
   background-color: #fff;
@@ -137,10 +152,40 @@ nav i{
   touch-action: manipulation;
 }
 
+.sidebarButton{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.sidebarButton:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+.sidebarButton:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+
+.search{
+    position: absolute;
+    top: 5px;
+    right: 120px;
+}
+
+.search:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+  .search:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
+
 .recipeButton{
     position: absolute;
-    bottom: 2px;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
 }
 
 .recipeButton:hover {
@@ -154,8 +199,8 @@ nav i{
 
 .ingButton{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
 }
 
 .ingButton:hover {
