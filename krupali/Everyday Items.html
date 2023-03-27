@@ -10,24 +10,19 @@
 </head>
 
 <body>
-    <button onclick="generateAll()">Start</button>
-    <button onclick="search()">Get Recipes</button>
-    <button>Display Selected Items</button>
-    <p id="sugar"></p>
+    <button class="button" onclick="generateAll()">Start</button>
+    <button class="button" onclick="search()">Get Recipes</button>
+
+    <div class="dropdown">
+        <button class="button">Selected Items</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a id="theList"></a>
+        </div>
+    </div>
 
     <div class="kitchen-continer">
         <div class = "title">
             Your Items
-        </div>
-
-        <div class="tile-content">
-            <div class="tile-title">
-                <h3>Selected Items</h3>
-            </div>
-
-            <div class="scrollmenu">
-                <a id="items">ITEM</a>
-            </div>
         </div>
 
         <div class="tile-content">
@@ -97,7 +92,7 @@
                 <a id="pasta" onclick="clicked(16)" class="tile">Pasta</a>
                 <a id="rice" onclick="clicked(43)" class="tile">Rice</a>
                 <a id="spiralPasta" onclick="clicked(17)" class="tile">Spiral Pasta</a>
-                <a id="gimelliPasta" onclick="clicked(18)" class="tile">Gimelli Pasta</a>
+                <a id="gemelliPasta" onclick="clicked(18)" class="tile">Gemelli Pasta</a>
                 <a id="rotiniNoodles" onclick="clicked(73)" class="tile">Rotini Noodles</a>
                 <a id="ravioli" onclick="clicked(63)" class="tile">Ravioli</a>
                 <a id="barley" onclick="clicked(64)" class="tile">Barley</a>
@@ -122,7 +117,7 @@
                 <a id="bread" onclick="clicked(40)" class="tile">Bread</a>
                 <a id="breadcrumbs" onclick="clicked(48)" class="tile">Bread Crumbs</a>
                 <a id="bagels" onclick="clicked(74)" class="tile">Bagels</a>
-                <a id="buns" onclick="clicked(5)" class="tile">Buns</a>
+                <a id="buns" onclick="clicked(75)" class="tile">Buns</a>
                 <a id="eggRollWraps" onclick="clicked(76)" class="tile">Egg Roll Wraps</a>
                 <a id="pizzaCrust" onclick="clicked(77)" class="tile">Pizza Crust</a>
                 <a id="wontonWrappers" onclick="clicked(78)" class="tile">Wonron Wrappers</a>
@@ -144,7 +139,7 @@
                 <a id="butter" onclick="clicked(2)" class="tile">Butter/Margerine</a>
                 <a id="mozzarella" onclick="clicked(13)" class="tile">Fresh Mozarella</a>
                 <a id="cream" onclick="clicked(36)" class="tile">Cream</a>
-                <a id="cheddar" onclick="clicked(50)" class="'tile">Cheddar Cheese</a>
+                <a id="cheddarCheese" onclick="clicked(50)" class="'tile">Cheddar Cheese</a>
             </div>
         </div>
 
@@ -185,14 +180,12 @@
                 <a id="chives" onclick="clicked(85)" class="tile">Chives</a>
                 <a id="italianSeasoning" onclick="clicked(86)" class="tile">Italian Seasoning</a>
                 <a id="nutmeg" onclick="clicked(87)" class="tile">Nutmeg</a>
-                <a id="paprika" onclick="clicked(88)" class="tile">Paprika</a>
-                <a id="peppercorns" onclick="clicked(89)" class="tile">Peppercorns</a>
-                <a id="chilliPowder" onclick="clicked(91)" class="tile">Chilli Powder</a>
-                <a id="cinnamon" onclick="clicked(92)" class="tile">Cinnamon</a>
-                <a id="cumin" onclick="clicked(93)" class="tile">Cumin</a>
-                <a id="dill" onclick="clicked(94)" class="tile">Dill</a>
-                <a id="meatSeasoning" onclick="clicked(90)" class="tile">Meat Seasoning</a>
-                <a id="parsley" onclick="clicked(38)" class="tile">Parsley</a>
+                <a id="peppercorns" onclick="clicked(88)" class="tile">Peppercorns</a>
+                <a id="chilliPowder" onclick="clicked(89)" class="tile">Chilli Powder</a>
+                <a id="cinnamon" onclick="clicked(90)" class="tile">Cinnamon</a>
+                <a id="cumin" onclick="clicked(91)" class="tile">Cumin</a>
+                <a id="dill" onclick="clicked(92)" class="tile">Dill</a>
+                <a id="meatSeasoning" onclick="clicked(93)" class="tile">Meat Seasoning</a>
                 
             </div>
         </div>
@@ -205,12 +198,22 @@
             <div class="scrollmenu">
                 <a id="basilPesto" onclick="clicked(14)" class="tile">Basil Pesto</a>
                 <a id="ketchup" onclick="clicked(29)" class="tile">Ketchup</a>
-                <a id="hotSauce" onclick="clicked(95)" class="tile">Hot Sauce</a>
-                <a id="mustard" onclick="clicked(96)" class="tile">Mustard</a>
-                <a id="mayo" onclick="clicked(97)" class="tile">Mayo</a>
-                <a id="saladDressing" onclick="clicked(98)" class="tile">Salad Dressing</a>
-                <a id="ranch" onclick="clicked(99)" class="tile">Ranch</a>
-                <a id="vinnegrette" onclick="clicked(100)" class="tile">Vinnegrette</a>
+                <a id="hotSauce" onclick="clicked(94)" class="tile">Hot Sauce</a>
+                <a id="mustard" onclick="clicked(95)" class="tile">Mustard</a>
+                <a id="mayo" onclick="clicked(96)" class="tile">Mayo</a>
+                <a id="saladDressing" onclick="clicked(97)" class="tile">Salad Dressing</a>
+                <a id="ranch" onclick="clicked(98)" class="tile">Ranch</a>
+                <a id="vinaigrette" onclick="clicked(99)" class="tile">Vinaigrette</a>
+            </div>
+        </div>
+
+        <div class="tile-content">
+            <div class="tile-title">
+                <h3>Recipes</h3>
+            </div>
+
+            <div class="scrollmenu">
+                <a id="recipes">The recipes</a>
             </div>
         </div>
    </div>
