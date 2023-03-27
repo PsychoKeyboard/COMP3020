@@ -138,7 +138,6 @@ var selectedIngredients;
 
 function clicked(num){
     allIngredients.list[num].check();
-    //document.getElementById(allIngredients.list[num].id).innerHTML = allIngredients.list[num].id + " " + allIngredients.list[num].checked + " " + allIngredients.list[num].priority;
 }
 
 function generateAll(){
@@ -186,28 +185,48 @@ function generateAll(){
         }
     
         calculatePriority(){
-            for(var j in this.ingredients){
-                this.priority++;
+            this.priority = 0;
+            for(var i in this.ingredients){
+                this.priority += this.ingredients[i].priority;
             }
         }
 
-        toString(){
+        string(){
             return this.name;
+        }
+
+        getPercentage(){
+            if(this.priority > 0) {
+                return ((this.priority)/((this.ingredients.length)-1))*100;
+            }
+            else{
+                return 0;
+            }
         }
     }
 
     class List{
         constructor(){
             this.list = new Array();
+            this.length = 0;
         }
     
         add(queueObject){
             this.list.push(queueObject);
+            this.length++;
         }
     
         remove(queueObject){
             const index = this.list.indexOf(queueObject);
             this.list.splice(index, 1);
+        }
+
+        getItemAt(i){
+            return this.list[i];
+        }
+
+        getLength(){
+            return this.length;
         }
 
         displaySelected(){
@@ -217,63 +236,84 @@ function generateAll(){
             }
             return theString;
         }
+
+        displayRecipe(){
+            var theString = "";
+            for(var i in this.list){
+                theString = theString + this.list[i].name + ", ";
+            }
+            return theString;
+        }
     }
 
     class PriorityList{
         constructor(){
-            this.items = new Array();
+            this.list = new Array();
         }
     
         enqueue(recipe){
-            // var contain = false;
+            var contain = false;
     
-            // for (var i = 0; i < this.items.length; i++){
-            //     if (this.items[i].priority > recipe.priority) {
-            //         this.items.splice(i, 0, recipe);
-            //         contain = true;
-            //         break;
-            //     }
-            // }
+            for (var i in this.list){
+                if (this.list[i].priority > recipe.priority) {
+                    this.list.splice(i, 0, recipe);
+                    contain = true;
+                    break;
+                }
+            }
     
-            // if(!contain){
-                this.items.push(recipe);
-            //}
+            if(!contain){
+                this.list.push(recipe);
+            }
         }
     
         dequeue(){
             if(this.isEmpty()){
                 return "Underflow";
             }
-            return this.items.shift();
+            return this.list.shift();
         }
     
         // isEmpty function
         isEmpty()
         {
             // return true if the queue is empty.
-            return this.items.length == 0;
+            return this.list.length == 0;
+        }
+
+        empty(){
+            this.list = new Array();
         }
     
         front(){
             if(this.isEmpty()){
                 return "No elements in Queue";
             }
-            return this.items[0];
+            return this.list[0];
         }
     
         rear(){
             if(this.isEmpty()){
                 return "No elements in Queue";
             }
-            return this.items[this.items.length - 1];
+            return this.list[this.list.length - 1];
         }
 
         displayRecipes(){
             var theString = "";
-            for(var i in this.items){
-                theString = theString + this.items[i].toString() + " " ;//+ this.items[i].priority + ", "; 
+            this.empty();
+            this.addRecipes();
+            for(var i in this.list){
+                theString = theString + this.list[i].string() + " " + this.list[i].priority + " " + Math.round(this.list[i].getPercentage()) + "%, ";
             }
             return theString;
+        }
+
+        addRecipes(){
+            for(var i = 0; i < allRecipes.getLength(); i++){
+                allRecipes.list[i].calculatePriority();
+                this.enqueue(allRecipes.list[i]);
+            }
         }
     }
 
@@ -533,37 +573,24 @@ function generateAll(){
 
     //var ALL RECIPES LIST
     allRecipes = new List();
-    allRecipes.add(gsBurger);
-    allRecipes.add(sfToast);
-    allRecipes.add(jRice);
-    allRecipes.add(ccTenderloins);
-    allRecipes.add(bBread);
-    allRecipes.add(pDough);
-    allRecipes.add(icpSalad);
-    allRecipes.add(vMomos);
-    allRecipes.add(ofPancakes);
+    allRecipes.add(gsBurger); //1
+    allRecipes.add(ckpShake); //2
+    allRecipes.add(sfToast); //3
+    allRecipes.add(jRice); //4
+    allRecipes.add(ccTenderloins); //5
+    allRecipes.add(bBread); //6
+    allRecipes.add(pDough); //7
+    allRecipes.add(icpSalad); //8
+    allRecipes.add(vMomos); //9
+    allRecipes.add(ofPancakes); //10
 
     //Priority List for Recipes;
     priorityRecipesList = new PriorityList();
-    // priorityRecipesList.enqueue(gsBurger);
-    // priorityRecipesList.enqueue(sfToast);
-    // priorityRecipesList.enqueue(jRice);
-    // priorityRecipesList.enqueue(ccTenderloins);
-    // priorityRecipesList.enqueue(bBread);
-    // priorityRecipesList.enqueue(pDough);
-    // priorityRecipesList.enqueue(icpSalad);
-    // priorityRecipesList.enqueue(vMomos);
-    // priorityRecipesList.enqueue(ofPancakes);
 }
 
 function search(){
-    for(var i in allRecipes){
-        calculatePriority(allRecipes[i]);
-        // if (allRecipes[i].priority >= 0){
-             priorityRecipesList.enqueue(allRecipes[i]);
-        // }
-    }
-    document.getElementById("recipes").innerHTML=priorityRecipesList.displayRecipes();
+    document.getElementById("allRecipes").innerHTML=allRecipes.displayRecipe();
+    document.getElementById("queuedRecipes").innerHTML=priorityRecipesList.displayRecipes();
 }
 
 function includes(ingredientsList, ingredient){
@@ -604,10 +631,4 @@ function showIngredients(){
 
 function updateIngredients(){
     document.getElementById("theList").innerHTML = selectedIngredients.displaySelected();
-}
-
-function calculatePriority(recipe){
-    for(var j in recipe.ingredients){
-        recipe.priority++;
-    }
 }
