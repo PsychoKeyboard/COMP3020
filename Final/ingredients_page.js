@@ -66,14 +66,13 @@ function search(){
             this.empty();
             this.addRecipes();
             for(var i in this.list){
-                theString = theString + this.list[i].name + " " + this.list[i].priority + "%, ";
+                theString = theString + this.list[i].name + " " + this.list[i].priority + " " + this.list[i].percentage + "%, ";
             }
             return theString;
         }
 
         addRecipes(){
             for(var i = 0; i < allRecipes.length; i++){
-                console.log(allRecipes.list[i].name + " priority of recipe at " + i + " is " + allRecipes.list[i].priority);
                 this.enqueue(allRecipes.list[i]);
             }
         }
@@ -131,6 +130,7 @@ function generateRecipes(){
             this.name = recipeName;
             this.ingredients = ingredientsList;
             this.priority = priority;
+            this.percentage = 0;
             this.url = url;
             this.image = image;
         }
@@ -143,7 +143,8 @@ function generateRecipes(){
             for(var j in this.ingredients){
                 this.priority += this.ingredients[j].priority;
             }
-            return ((this.priority)/((this.ingredients.length)-1))*100;
+            this.percentage = ((this.priority)/((this.ingredients.length)-1))*100
+            return this.percentage;
         }
     }
 
