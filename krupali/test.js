@@ -182,12 +182,12 @@ function generateAll(){
         }
     
         add(ingredient){
-            this.ingredients.add(ingredient);
+            this.ingredients.push(ingredient);
         }
     
-        calculatePriority(ingredientsList){
-            for(var j =0; j < recipe.ingredients.length; j++){
-                this.priority += includes(ingredientsList,recipe.ingredient[j]);
+        calculatePriority(){
+            for(var j in this.ingredients){
+                this.priority++;
             }
         }
 
@@ -271,7 +271,7 @@ function generateAll(){
         displayRecipes(){
             var theString = "";
             for(var i in this.items){
-                theString = theString + this.items[i].toString() + ", "; 
+                theString = theString + this.items[i].toString() + " " ;//+ this.items[i].priority + ", "; 
             }
             return theString;
         }
@@ -545,35 +545,25 @@ function generateAll(){
 
     //Priority List for Recipes;
     priorityRecipesList = new PriorityList();
-    priorityRecipesList.enqueue(gsBurger);
-    priorityRecipesList.enqueue(sfToast);
-    priorityRecipesList.enqueue(jRice);
-    priorityRecipesList.enqueue(ccTenderloins);
-    priorityRecipesList.enqueue(bBread);
-    priorityRecipesList.enqueue(pDough);
-    priorityRecipesList.enqueue(icpSalad);
-    priorityRecipesList.enqueue(vMomos);
-    priorityRecipesList.enqueue(ofPancakes);
+    // priorityRecipesList.enqueue(gsBurger);
+    // priorityRecipesList.enqueue(sfToast);
+    // priorityRecipesList.enqueue(jRice);
+    // priorityRecipesList.enqueue(ccTenderloins);
+    // priorityRecipesList.enqueue(bBread);
+    // priorityRecipesList.enqueue(pDough);
+    // priorityRecipesList.enqueue(icpSalad);
+    // priorityRecipesList.enqueue(vMomos);
+    // priorityRecipesList.enqueue(ofPancakes);
 }
 
 function search(){
-    // for(var i in allRecipes){
-    //     calculatePriority(selectedIngredients, allRecipes[i]);
-    //     if (allRecipes[i].priority > 0){
-    //         priorityRecipesList.enqueue(allRecipes[i]);
-    //     }
-    // }
-    document.getElementById("recipes").innerHTML=priorityRecipesList.displayRecipes();
-}
-
-function calculatePriority(ingredientsList, recipe){
-    //filter through recipes and guve priority num according to num of ingredients
-    //if ingredient is missing, priority num is decreased by 1
-    //super ingredients have a num of 2
-    //normal ingredients have a num of 1 
-    for(var j in recipe.ingredientsList){
-        recipe.priority += includes(ingredientsList,recipe.ingredientsList[j]);
+    for(var i in allRecipes){
+        calculatePriority(allRecipes[i]);
+        // if (allRecipes[i].priority >= 0){
+             priorityRecipesList.enqueue(allRecipes[i]);
+        // }
     }
+    document.getElementById("recipes").innerHTML=priorityRecipesList.displayRecipes();
 }
 
 function includes(ingredientsList, ingredient){
@@ -616,3 +606,8 @@ function updateIngredients(){
     document.getElementById("theList").innerHTML = selectedIngredients.displaySelected();
 }
 
+function calculatePriority(recipe){
+    for(var j in recipe.ingredients){
+        recipe.priority++;
+    }
+}
