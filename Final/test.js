@@ -593,17 +593,6 @@ function search(){
     document.getElementById("queuedRecipes").innerHTML=priorityRecipesList.displayRecipes();
 }
 
-function includes(ingredientsList, ingredient){
-    const result = ingredientsList.find(({name}) => name === ingredient);
-    num = 0;
-    if(result === 'undefined') {
-        num = -1;
-    }
-    else{
-        num = result.priority;
-    }
-    return num;
-}
 
 function display(priorityRecipesList){
     let resultsContainer = document.getElementById("results-container");
