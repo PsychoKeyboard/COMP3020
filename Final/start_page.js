@@ -150,33 +150,6 @@ function generateAll(){
         }
     }
 
-    class Recipe{
-        constructor(recipeName, ingredientsList, priority, url, image){
-            this.name = recipeName;
-            this.ingredients = ingredientsList;
-            this.priority = priority;
-            this.url = url;
-            this.image = image;
-        }
-    
-        add(ingredient){
-            this.ingredients.push(ingredient);
-        }
-
-        string(){
-            return this.name;
-        }
-
-        getPercentage(){
-            if(this.priority > 0) {
-                return ((this.priority)/((this.ingredients.length)-1))*100;
-            }
-            else{
-                return 0;
-            }
-        }
-    }
-
     class List{
         constructor(){
             this.list = new Array();
@@ -209,17 +182,7 @@ function generateAll(){
             }
             return theString;
         }
-
-        displayRecipe(){
-            var theString = "";
-            for(var i in this.list){
-                theString = theString + this.list[i].name + ", ";
-            }
-            return theString;
-        }
-    }
-
-    
+    } 
 
     //ingredients
     cheese = new Ingredient("cheese", "cheese", 0);
@@ -462,33 +425,7 @@ function generateAll(){
     allIngredients.add(saladDressing); //97
     allIngredients.add(ranch); //98
     allIngredients.add(vinaigrette); //99
-
-    //recipes
-    gsBurger = new Recipe("Golden Shrimp Burger", [eggs, onion, ketchup, shrimp, potato, blackPepper, butter, buns], 0, "https://www.epicurious.com/recipes/food/views/ba-syn-crispy-golden-shrimp-burgers", "../Resourses/burger.png");
-    ckpShake = new Recipe("Chocolate Keto Protein Shake", [milk, butter, cocoaPowder, sugar, chiaSeed, hempSeed, vanilla], 0, "https://www.delish.com/cooking/recipe-ideas/a25336257/keto-protein-shake-recipe/", "../Resourses/milkshake.png" );
-    sfToast = new Recipe("Savory French Toast", [eggs, cream, garlicPowder, onionPowder, parsley, paprika, blackPepper, bread, butter], 0, "https://tasty.co/recipe/savory-french-toast","../Resourses/toast.png");
-    jRice = new Recipe("Jollof Rice", [redPepper, tomato, onion, ginger, garlic, rice, curryPowder, bouillonPowder, thyme, greenPeas, oil], 0, "https://www.simplyrecipes.com/jollof-rice-recipe-7104327", "../Resourses/Rice.png");
-    ccTenderloins = new Recipe("Crumbed Chicken Tenderloins", [eggs, breadcrumbs, chickenTenderloins, oil], 0, "https://www.allrecipes.com/recipe/260625/crumbed-chicken-tenderloins-air-fried/", "../Resourses/chickenTender.png");
-    bBread = new Recipe("Banana Bread", [banana, butter, bakingSoda, sugar, eggs, vanilla, flour, oliveOil], 0, "https://www.simplyrecipes.com/recipes/banana_bread/", "../Resourses/bBread.png");
-    pDough = new Recipe("Pizza Dough", [flour, yeast, sugar, garlicPowder], 0, "https://sugarspunrun.com/the-best-pizza-dough-recipe", "../Resourses/pDough.png");
-    icpSalad = new Recipe("Italian Caprese Pasta Salad", [pasta, basilPesto, tomato, mozzarella, oregano, oil], 0, "https://anitalianinmykitchen.com/caprese-pasta-salad", "../Resourses/icpSalad.png");
-    vMomos = new Recipe("Veg Momos", [flour, ginger, garlic, vinegar, soySauce, blackPepper, oil], 0, "https://www.vegrecipesofindia.com/veg-momos-recipe-vegetable-momos/#wprm-recipe-container-139104", "../Resourses/momos.png");
-    ofPancakes = new Recipe("Old Fasioned Pancakes", [flour, salt, eggs, milk, sugar, bakingPowder, oil], 0, "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/", "../Resourses/pancakes.png");
-
-    //var ALL RECIPES LIST
-    allRecipes = new List();
-    allRecipes.add(gsBurger); //1
-    allRecipes.add(ckpShake); //2
-    allRecipes.add(sfToast); //3
-    allRecipes.add(jRice); //4
-    allRecipes.add(ccTenderloins); //5
-    allRecipes.add(bBread); //6
-    allRecipes.add(pDough); //7
-    allRecipes.add(icpSalad); //8
-    allRecipes.add(vMomos); //9
-    allRecipes.add(ofPancakes); //10
     
     sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
-    sessionStorage.setItem("recipes", JSON.stringify(allRecipes));
     sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
 }
