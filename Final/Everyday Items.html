@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-<title>HTML Tutorial</title>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/b4c9d10f70.js" crossorigin="anonymous">
-    </script>
-    <script src="test.js"></script>
+    <script src="https://kit.fontawesome.com/b4c9d10f70.js" crossorigin="anonymous">    </script>
+    <script src="ingredients_page.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <button class="button" onclick="generateAll()">Start</button>
-    <button class="button" onclick="search()">Get Recipes</button>
+    <button class="button" onclick="search()">Generate Recipes</button>
+    <button class="button" onclick="location.href='Recipes.html'">Get Recipes</button>
 
     <div class="dropdown">
         <button class="button">Selected Items</button>
         <div id="myDropdown" class="dropdown-content">
             <a id="theList"></a>
         </div>
-    </div>
+      </div>
 
     <div class="kitchen-continer">
         <div class = "title">
