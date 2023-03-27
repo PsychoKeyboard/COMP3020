@@ -4,12 +4,13 @@
 }
 
 :root {
-    --background: #fafce7ff;
+    --background: rgb(255, 234, 202);
     --hover-bg: #fbb4398c;
     --selected-bg: #fbb439ff;
     --start-bg: #014e55d2;
     --border: #8f2100ff;
     --text-color: #2b2b2bff;
+    --light-text:#fff5ea;
     --main-title: #440202ff;
     --second-title: #2c0000ff;
     --clear-bg: #00000000;
@@ -239,8 +240,8 @@ div.scrollmenu a:hover{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--hover-bg);
-    width: 160px;
+    background-color: var(--selected-bg);
+    width: 190px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -289,12 +290,14 @@ div.scrollmenu a:hover{
     bottom: 0;
     left: 0;
     padding: 10px;
+    color:var(--text-color);
     width: 100%;
     height: 20%;
     background-color: rgba(255,255,255,0.8);
 }
 
 .recipecard-percentage {
+    color:var(--text-color);
     position: absolute;
     bottom: 0;
     right: 0;

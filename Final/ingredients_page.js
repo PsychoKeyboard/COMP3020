@@ -67,18 +67,18 @@ function search(){
             for(var i in this.list){
                 theString = theString + this.list[i].name + " " + this.list[i].priority + " " + this.list[i].percentage + "%, ";
             }
-            return theString;
         }
 
         addRecipes(){
             for(var i = 0; i < allRecipes.length; i++){
-                if(allRecipes.list[i].percentage > 20){
+                if(allRecipes.list[i].percentage < 20){
                     this.enqueue(allRecipes.list[i]);
                 }
             }
         }
     }
     var priorityRecipesList = new PriorityList();
+    priorityRecipesList.displayRecipes();
 
     sessionStorage.setItem("recipes", JSON.stringify(allRecipes));
     sessionStorage.setItem("priorityRecipes", JSON.stringify(priorityRecipesList));

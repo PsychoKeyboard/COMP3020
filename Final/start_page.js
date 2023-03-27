@@ -1,7 +1,3 @@
-window.onload() = function(){
-    generateAll();
-}
-
 //ingredients
 var cheese; //0 
 
