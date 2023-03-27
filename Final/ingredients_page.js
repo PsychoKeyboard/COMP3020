@@ -6,7 +6,6 @@ function clicked(num){
 
 function search(){
     var allRecipes = generateRecipes();
-    document.getElementById("allRecipes").innerHTML = displayRecipe(allRecipes);
     var priorityRecipesList = JSON.parse(sessionStorage.getItem("priorityRecipes"));
     class PriorityList{
         constructor(){
@@ -78,7 +77,6 @@ function search(){
         }
     }
     var priorityRecipesList = new PriorityList();
-    document.getElementById("queuedRecipes").innerHTML = priorityRecipesList.displayRecipes();
 
     sessionStorage.setItem("recipes", JSON.stringify(allRecipes));
     sessionStorage.setItem("priorityRecipes", JSON.stringify(priorityRecipesList));
