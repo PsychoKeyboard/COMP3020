@@ -203,7 +203,7 @@ function check(ingredient){
     if (ingredient.checked == false){
         ingredient.checked = true;
         ingredient.priority = 1;
-        document.getElementById(ingredient.id).style="background-color:var(--hover-bg);";
+        document.getElementById(ingredient.id).style="background-color:var(--selected-bg);";
         add(selectedIngredients, ingredient);
         sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
         updateIngredients();  
@@ -217,6 +217,7 @@ function check(ingredient){
         updateIngredients();
     }
 }
+
 
 //list functions
 function add(listObject, queueObject){

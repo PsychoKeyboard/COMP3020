@@ -5,8 +5,12 @@ function getRecipes(){
 
 function displayPriorityList(theList){
     var string = ""
-    for(var i in theList.list){
-        string = string + "<a>" + theList.list[i].name + " " + theList.list[i].priority + " " + theList.list[i].percentage + "%</a>";
+    for(var i = theList.list.length -1; i >= 0;i--){
+        string = string + "<div class=\"tile\" onclick=\"location.href='" + theList.list[i].url + "'\"> " + theList.list[i].name + "</div>";
     }
     return string;
+}
+
+function stringDisplay(){
+
 }
