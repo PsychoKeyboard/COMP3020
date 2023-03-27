@@ -162,13 +162,6 @@ function generateAll(){
         add(ingredient){
             this.ingredients.push(ingredient);
         }
-    
-        calculatePriority(){
-            this.priority = 0;
-            for(var i in this.ingredients){
-                this.priority += this.ingredients[i].priority;
-            }
-        }
 
         string(){
             return this.name;
@@ -198,6 +191,7 @@ function generateAll(){
         remove(queueObject){
             const index = this.list.indexOf(queueObject);
             this.list.splice(index, 1);
+            this.length--;
         }
 
         getItemAt(i){
@@ -225,76 +219,7 @@ function generateAll(){
         }
     }
 
-    class PriorityList{
-        constructor(){
-            this.list = new Array();
-        }
     
-        enqueue(recipe){
-            var contain = false;
-    
-            for (var i in this.list){
-                if (this.list[i].priority > recipe.priority) {
-                    this.list.splice(i, 0, recipe);
-                    contain = true;
-                    break;
-                }
-            }
-    
-            if(!contain){
-                this.list.push(recipe);
-            }
-        }
-    
-        dequeue(){
-            if(this.isEmpty()){
-                return "Underflow";
-            }
-            return this.list.shift();
-        }
-    
-        // isEmpty function
-        isEmpty()
-        {
-            // return true if the queue is empty.
-            return this.list.length == 0;
-        }
-
-        empty(){
-            this.list = new Array();
-        }
-    
-        front(){
-            if(this.isEmpty()){
-                return "No elements in Queue";
-            }
-            return this.list[0];
-        }
-    
-        rear(){
-            if(this.isEmpty()){
-                return "No elements in Queue";
-            }
-            return this.list[this.list.length - 1];
-        }
-
-        displayRecipes(){
-            var theString = "";
-            this.empty();
-            this.addRecipes();
-            for(var i in this.list){
-                theString = theString + this.list[i].string() + " " + this.list[i].priority + " " + Math.round(this.list[i].getPercentage()) + "%, ";
-            }
-            return theString;
-        }
-
-        addRecipes(){
-            for(var i = 0; i < allRecipes.getLength(); i++){
-                allRecipes.list[i].calculatePriority();
-                this.enqueue(allRecipes.list[i]);
-            }
-        }
-    }
 
     //ingredients
     cheese = new Ingredient("cheese", "cheese", 0);
@@ -562,12 +487,8 @@ function generateAll(){
     allRecipes.add(icpSalad); //8
     allRecipes.add(vMomos); //9
     allRecipes.add(ofPancakes); //10
-
-    //Priority List for Recipes;
-    priorityRecipesList = new PriorityList();
-
+    
     sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
     sessionStorage.setItem("recipes", JSON.stringify(allRecipes));
     sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
-    sessionStorage.setItem("priorityRecipes", JSON.stringify(priorityRecipesList));
 }
