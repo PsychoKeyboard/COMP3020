@@ -9,7 +9,7 @@ function displayPriorityList(theList){
         string += "<div class=\"recipecard\" onclick=\"location.href='" + theList.list[i].url + "'\">";
         string += "<img src=\"" + theList.list[i].image + "\">";
         string += "<div class=\"recipecard-text\">" + theList.list[i].name + "</div>";
-        string += "<div class=\"recipecard-percentage\">" + theList.list[i].percentage + "\%</div>";
+        string += "<div class=\"recipecard-percentage\">" + theList.list[i].ratio + "</div>";
         string += "</div>";
     }
     return string;
