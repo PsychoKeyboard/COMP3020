@@ -137,15 +137,35 @@ var priorityRecipesList;
 var selectedIngredients;
 
 function generate(){
-    if(sessionStorage.getItem("loaded") === null){
+    if(sessionStorage.getItem("loaded") == null){
         generateAll();
         loadAll2();
         sessionStorage.setItem("loaded", true);
     }
+    //else{
+    //    loadAll();
+    //}
 }
+
+function loadAll(){
+    var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
+    for(var i in allIngredients.list){
+        if(allIngredients.list[i].checked == true){
+            document.getElementById(allIngredients.list[i].id).style="background-color:#fbb439ff;";
+        }
+    }
+    sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
+    updateIngredients();
+}
+
 
 function loadAll2(){
     var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
+    for(var i in allIngredients.list){
+        if(allIngredients.list[i].checked == true){
+            document.getElementById(allIngredients.list[i].id).style="background-color:var(--selected-bg);";
+        }
+    }
     sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
     updateIngredients();
 }

@@ -17,7 +17,7 @@
     --button-bg: #ffe2b1ff;
 }
 
-.bg{
+/* .bg{
     background-image: url("../ashish/bg04.png");
 
     filter:blur();
@@ -29,7 +29,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+
+}*/
 
 
 
@@ -202,7 +203,7 @@ body, html {
     
 }
 
-nav {
+/*nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -247,7 +248,7 @@ nav i{
     color: #fff;
     text-decoration: none;
     font-size: 13px;
-}
+}*/
 
 .bg .fridge img{
     position: absolute;
@@ -391,7 +392,9 @@ div.scrollmenu a:hover{
   
 .dropdown:hover .dropdown-content {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .recipes-container {
