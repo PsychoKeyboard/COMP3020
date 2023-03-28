@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/327e1b2d51.js" crossorigin="anonymous"></script>
 <script src="start_page.js"></script>
+<script src="ingredients_page.js"></script>
 </head>
 
 <body onload="generate()">
@@ -49,19 +50,14 @@
       </a>
     </button>
 
-    <button class = "recipeButton" type = button>
-      Get Recipes!
-    </button>
+    <button class="recipeButton" onclick="search(); location.href='Recipes.html'">Get Recipes!</button>
 
     <div class="dropdown">
-       <button class="ingButton" type="button">
-      <i class="fas fa-shopping-basket" style="color: #000000;"></i>
-      Basket!
-      </button>
+      <button >Basket</button>
       <div id="myDropdown" class="dropdown-content">
           <a id="theList"></a>
       </div>
-    </div>  
+    </div>
 
   <!-- JavaScript-->
   <script>
