@@ -41,14 +41,14 @@ nav {
     align-items: center;
 }
 
- nav img{
+ nav a img{
     width: 150px; 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 30px;
  }
 
-.nav-links{
+.nav-links2{
 
     background-image: linear-gradient(
             rgba(100,173,156, 1.0),
@@ -61,13 +61,13 @@ nav {
         background-position: -100px;
 
 
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 200px;
     top: 0;
     left: -200px;
     text-align: left;
-    z-index: 3;
+    
     transition: 1s;
  }
 
@@ -79,7 +79,7 @@ nav i{
 }
 
 
-.nav-links ul li{
+.nav-links2 ul li{
     position: relative;
     list-style-type: none;
     top: 50px;
@@ -87,10 +87,16 @@ nav i{
     
 }
 
-.nav-links ul li a{
+.nav-links2 ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 13px;
+}
+
+.nav-links2 ul li a img{
+    position: fixed;
+    top: 0px;
+    left: 30px;
 }
 
 button{
@@ -125,7 +131,7 @@ button{
   }
   
   .recipeButton{
-    position: absolute;
+    position: fixed;
     bottom: 5px;
     right: 5px;
 }
@@ -140,7 +146,7 @@ button{
 }
 
 .ingButton{
-    position: absolute;
+    position: fixed;
     top: 5px;
     right: 5px;
 }
