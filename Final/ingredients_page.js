@@ -156,7 +156,7 @@ function generateRecipes(){
             }
             var numIngredients = this.ingredients.length -1
             this.percentage = Math.round(((this.priority)/numIngredients)*100);
-            this.ratio = this.percentage + "% = " + this.ratio + this.priority + " of " + numIngredients + " ingredients";
+            this.ratio = this.ratio + this.priority + " of " + numIngredients + " ingredients";
             return this.percentage;
         }
     }

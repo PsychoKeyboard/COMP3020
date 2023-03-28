@@ -107,14 +107,12 @@ button {
   color: var(--text-color);
   size: 5px;
   font-family: "Cookie Crisp";
-  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
 }
 
 input {
   color: #363535d0;
   size: 5px;
   font-family: "Cookie Crisp";
-  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
 }
 
 .ingredients {
@@ -130,6 +128,7 @@ input {
   border-radius: 7.5px;
   color: var(--text-color);
   cursor: pointer;
+  font-family: "Cookie Crisp";
 }
 
 .tile:hover {
