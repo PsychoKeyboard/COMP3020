@@ -21,7 +21,24 @@
         }
     </style>
 
-    <button class="button" onclick="location.href='Homepage.html'">To Kitchen</button>
+<nav>
+    <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
+  
+  <a href = "Homepage.html"><img src = "../Resourses/logo.png" ></a>
+  <div class ="nav-links" id ="navLinks">
+    <ul>
+        <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
+      <li><a href = "Homepage.html"><img src = "../Resourses/logo.png" ></a></li>
+      <li><a href= "">HOME</a></li>
+      <li><a href= "">PROFILE</a></li>
+      <li><a href= "">SETTINGS</a></li>
+      <li><a href= "">ABOUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <!--<button class="button" onclick="location.href='Homepage.html'">To Kitchen</button>-->
     <button class="button" onclick="search(); location.href='Recipes.html'">Get Recipes</button>
 
     <div class="dropdown">
@@ -218,5 +235,23 @@
             </div>
         </div>
    </div>
+
+   <!-- JavaScript-->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    var hidden = true;
+
+    function menu(){
+      if(hidden){
+        navLinks.style.left = "0";
+        hidden = false;
+      }
+      else{
+        navLinks.style.left = "-200px";
+        hidden = true;
+      }
+    }
+
+  </script>
 </body>
 </html>
