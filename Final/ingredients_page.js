@@ -1,3 +1,14 @@
+function loadAll(){
+    var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
+    for(var i in allIngredients.list){
+        if(allIngredients.list[i].checked == true){
+            document.getElementById(allIngredients.list[i].id).style="background-color:var(--selected-bg);";
+        }
+    }
+    sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
+    updateIngredients();
+}
+
 function clicked(num){
     var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
     check(allIngredients.list[num]);
@@ -5,9 +16,11 @@ function clicked(num){
 }
 
 function search(){
+    var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
     var allRecipes = generateRecipes();
     var priorityRecipesList = JSON.parse(sessionStorage.getItem("priorityRecipes"));
-    class PriorityList{
+    class PriorityList
+    {
         constructor(){
             this.list = new Array();
         }
@@ -71,8 +84,8 @@ function search(){
         }
 
         addRecipes(){
-            for(var i = 0; i < allRecipes.length; i++){
-                if(allRecipes.list[i].percentage > 20){
+            for(var i in allRecipes.list){
+                if(allRecipes.list[i].percentage < 20){
                     this.enqueue(allRecipes.list[i]);
                 }
             }
