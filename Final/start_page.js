@@ -136,11 +136,32 @@ var allRecipes;
 var priorityRecipesList;
 var selectedIngredients;
 
-function generate(loaded){
+function generate(){
     if(sessionStorage.getItem("loaded") === null){
         generateAll();
+        loadAll2();
         sessionStorage.setItem("loaded", true);
     }
+}
+
+function loadAll2(){
+    var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
+    sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
+    updateIngredients();
+}
+
+function updateIngredients2(){
+    var selectedIngredients = JSON.parse(sessionStorage.getItem("selectedIngredients"));
+    document.getElementById("theList").innerHTML = displaySelected(selectedIngredients);
+    sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
+}
+
+function displaySelected2(listObject){
+    var theString = "";
+    for(var i in listObject.list){
+        theString = theString + "<a>" + listObject.list[i].name + "</a>"; 
+    }
+    return theString;
 }
 
 function generateAll(){

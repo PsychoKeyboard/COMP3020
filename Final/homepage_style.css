@@ -194,19 +194,20 @@ button{
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
-.ingButton{
-    position: absolute;
-    top: 5px;
-    right: 5px;
+.ingButton {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
 }
 
 .ingButton:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
 .ingButton:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
 
