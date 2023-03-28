@@ -276,4 +276,4 @@ function searchIngredient() {
         x[i].style.display="grid";                 
       }
     }
-  }
+}
