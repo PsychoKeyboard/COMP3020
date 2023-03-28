@@ -16,13 +16,16 @@
 
   <div class="bg">
     <nav>
-        <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
-      
+      <button class="sidebarButton" type = "button" onclick="menu()">
+        <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
+      </button>
       <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
-      <div class ="nav-links" id ="navLinks">
+      <div class ="nav-links2" id ="navLinks">
         <ul>
-            <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
-          <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
+          <button class="sidebarButton" type = "button" onclick="menu()">
+            <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
+          </button>
+            <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
           <li><a href= "index.html">HOME</a></li>
           <li><a href= "search_bar_page.html">SEARCH</a></li>
           <li><a href= "Recipes.html">RECIPES</a></li>
@@ -43,11 +46,13 @@
       </a>  
     </div>
 
+    <a href = "../Final/search_bar_page.html">
     <button class="search" type="button">
-      <a href = "../Final/search_bar_page.html">
+      
         <i class="fas fa-search fa-lg" style="color: #000000;"></i>
-      </a>
+      
     </button>
+  </a>
 
     <button class="recipeButton" onclick="search(); location.href='Recipes.html'">Get Recipes!</button>
 

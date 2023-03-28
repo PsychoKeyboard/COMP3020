@@ -35,7 +35,7 @@ nav a img{
   width: 150px; 
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 50px;
 }
 
 .nav-links2{
@@ -61,12 +61,12 @@ nav a img{
   transition: 1s;
 }
 
-nav i{
+/*nav i{
   color: white;
   position: fixed;
-  top: 30px;
+  top: 27px;
   left: 10px;
-}
+}*/
 
 
 .nav-links2 ul li{
@@ -87,7 +87,7 @@ nav i{
 .nav-links2 ul li a img{
   position: fixed;
   top: 0px;
-  left: 30px;
+  left: 50px;
 }
 
 
@@ -124,6 +124,22 @@ button {
   touch-action: manipulation;
 }
 
+.sidebarButton{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+
+.sidebarButton:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.sidebarButton:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
 .recipeButton {
   position: fixed;
   bottom: 5px;
@@ -157,19 +173,21 @@ button {
 }
 
 .search-wrapper {
+  position: relative;
+  top: 20px;
   border: 2px solid var(--border);
-  margin-top: 0rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 0.45rem;
   width: 55%;
   margin-left: 25%;
-
+  transform: scale(1.1);
   transition: all 0.2s ease-in-out;
 }
 
 .search-wrapper:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 ::placeholder {
