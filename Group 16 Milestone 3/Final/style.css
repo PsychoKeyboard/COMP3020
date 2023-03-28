@@ -157,7 +157,20 @@ button{
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
   }
 
+  .search{
+    position: absolute;
+    top: 5px;
+    right: 120px;
+}
 
+.search:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+  }
+  
+  .search:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  }
   .recipeButton{
     position: fixed;
     bottom: 5px;

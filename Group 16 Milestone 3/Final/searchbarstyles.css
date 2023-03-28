@@ -173,19 +173,21 @@ button {
 }
 
 .search-wrapper {
+  position: relative;
+  top: 20px;
   border: 2px solid var(--border);
-  margin-top: 0rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 0.45rem;
   width: 55%;
   margin-left: 25%;
-
+  transform: scale(1.1);
   transition: all 0.2s ease-in-out;
 }
 
 .search-wrapper:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 ::placeholder {
