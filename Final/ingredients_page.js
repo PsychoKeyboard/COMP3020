@@ -1,3 +1,14 @@
+function loadAll(){
+    var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
+    for(var i in allIngredients.list){
+        if(allIngredients.list[i].checked == true){
+            document.getElementById(allIngredients.list[i].id).style="background-color:var(--selected-bg);";
+        }
+    }
+    sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
+    updateIngredients();
+}
+
 function clicked(num){
     var allIngredients = JSON.parse(sessionStorage.getItem("ingredients"));
     check(allIngredients.list[num]);
