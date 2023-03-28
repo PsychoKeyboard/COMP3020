@@ -67,7 +67,7 @@ nav {
     top: 0;
     left: -200px;
     text-align: left;
-    
+    z-index: 5;
     transition: 1s;
  }
 
