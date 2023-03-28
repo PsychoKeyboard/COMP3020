@@ -35,7 +35,7 @@ nav a img{
   width: 150px; 
   position: absolute;
   top: 0;
-  left: 30px;
+  left: 50px;
 }
 
 .nav-links2{
@@ -61,12 +61,12 @@ nav a img{
   transition: 1s;
 }
 
-nav i{
+/*nav i{
   color: white;
   position: fixed;
   top: 27px;
   left: 10px;
-}
+}*/
 
 
 .nav-links2 ul li{
@@ -87,7 +87,7 @@ nav i{
 .nav-links2 ul li a img{
   position: fixed;
   top: 0px;
-  left: 30px;
+  left: 50px;
 }
 
 
@@ -123,6 +123,22 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+.sidebarButton{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.sidebarButton:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.sidebarButton:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
 
 .recipeButton {
   position: fixed;

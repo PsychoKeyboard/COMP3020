@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Cookie Crisp";
+  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -33,7 +38,7 @@ nav {
     width: 150px; 
     position: absolute;
     top: 0;
-    left: 30px;
+    left: 50px;
  }
 
 .nav-links2{
@@ -59,12 +64,12 @@ nav {
     transition: 1s;
  }
 
-nav i{
+/*nav i{
     color: white;
     position: fixed;
     top: 27px;
     left: 10px;
-}
+}*/
 
 
 .nav-links2 ul li{
@@ -84,7 +89,7 @@ nav i{
 .nav-links2 ul li a img{
   position: fixed;
   top: 0px;
-  left: 30px;
+  left: 50px;
 }
 
 
@@ -239,11 +244,13 @@ button{
   padding: 12px 16px;
   text-decoration: none;
   display: block; 
-  font-family: 'Roboto Serif', serif;
+  font-family: "Cookie Crisp";
   font-size: 20px;
 }
 
-.dropdown-content a:hover {font-size: 20px}
+.dropdown-content a:hover {
+  font-size: 20px;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;

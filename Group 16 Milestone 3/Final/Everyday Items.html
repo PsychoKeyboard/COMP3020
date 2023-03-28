@@ -18,7 +18,7 @@
 </head>
 
 <body onload="loadAll()">
-    <style>
+    <!--<style>
         body {
             background-image: linear-gradient(
                 rgba(200, 121, 61, 0.292),
@@ -29,23 +29,26 @@
             background-attachment: fixed;
             background-size: 100% 100%;
         }
-    </style>
+    </style>-->
 
 <nav>
-    <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
-  
-  <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
-  <div class ="nav-links2" id ="navLinks">
-    <ul>
-        <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
-      <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
-      <li><a href= "index.html">HOME</a></li>
-      <li><a href= "search_bar_page.html">SEARCH</a></li>
-      <li><a href= "Recipes.html">RECIPES</a></li>
-      <li><a href= "">ABOUT</a></li>
-    </ul>
-  </div>
-</nav>
+    <button class="sidebarButton" type = "button">
+      <i class="fas fa-bars fa-lg" style = "color:#000000;" onclick="menu()"></i>
+    </button>
+    <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
+    <div class ="nav-links2" id ="navLinks">
+      <ul>
+        <button class="sidebarButton" type = "button">
+          <i class="fas fa-bars fa-lg" style = "color:#000000;" onclick="menu()"></i>
+        </button>
+          <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
+        <li><a href= "index.html">HOME</a></li>
+        <li><a href= "search_bar_page.html">SEARCH</a></li>
+        <li><a href= "Recipes.html">RECIPES</a></li>
+        <li><a href= "">ABOUT</a></li>
+      </ul>
+    </div>
+  </nav>
 
     <button class="recipeButton" onclick="search(); location.href='Recipes.html'">Get Recipes!</button>
 
