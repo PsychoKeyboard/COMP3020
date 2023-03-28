@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/b4c9d10f70.js" crossorigin="anonymous">    </script>
+    <script src="https://kit.fontawesome.com/327e1b2d51.js" crossorigin="anonymous"></script>
+    <script src="recipe_page.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="getRecipes()">
+    <style>
+        body {
+            background-image: linear-gradient(
+                rgba(200, 121, 61, 0.292),
+                rgba(200, 121, 61, 0.292)
+            )
+            ,url("../Resourses/background-blurred.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+
+<nav>
+    <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
+  
+  <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
+  <div class ="nav-links2" id ="navLinks">
+    <ul>
+        <i class="fas fa-bars fa-lg" style = "color:#ffffff;" onclick="menu()"></i>
+      <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
+      <li><a href= "index.html">HOME</a></li>
+      <li><a href= "search_bar_page.html">SEARCH</a></li>
+      <li><a href= "Recipes.html">RECIPES</a></li>
+      <li><a href= "">ABOUT</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="kitchen-continer">
+
+        <!--<button class="button" onclick="location.href='Homepage.html'">To Kitchen</button>
+        <button class="button" onclick="location.href='Everyday Items.html'">To Pantry</button>
+        -->
+        <div class = "title">
+            Recipes
+        </div>
+
+        <div>
+            <div class="recipes-container">
+            <div>
+                <a id="queuedRecipes">The Shown Recipes</a>
+            </div>
+            </div>
+        </div>
+   </div>
+
+
+<!-- JavaScript-->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    var hidden = true;
+
+    function menu(){
+      if(hidden){
+        navLinks.style.left = "0";
+        hidden = false;
+      }
+      else{
+        navLinks.style.left = "-200px";
+        hidden = true;
+      }
+    }
+
+  </script>
+
+</body>
+</html>
