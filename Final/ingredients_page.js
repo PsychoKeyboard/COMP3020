@@ -80,6 +80,7 @@ function search(){
             for(var i in this.list){
                 theString = theString + this.list[i].name + " " + this.list[i].priority + " " + this.list[i].percentage + "%, ";
             }
+            return theString;
         }
 
         addRecipes(){
@@ -91,7 +92,6 @@ function search(){
         }
     }
     var priorityRecipesList = new PriorityList();
-    priorityRecipesList.displayRecipes();
 
     sessionStorage.setItem("recipes", JSON.stringify(allRecipes));
     sessionStorage.setItem("priorityRecipes", JSON.stringify(priorityRecipesList));
