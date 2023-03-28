@@ -29,7 +29,7 @@ function search(){
             var contain = false;
     
             for (var i in this.list){
-                if (this.list[i].priority > recipe.priority) {
+                if (this.list[i].percentage > recipe.percentage) {
                     this.list.splice(i, 0, recipe);
                     contain = true;
                     break;
@@ -140,6 +140,7 @@ function generateRecipes(){
             this.ingredients = ingredientsList;
             this.priority = priority;
             this.percentage = 0;
+            this.ratio = "";
             this.url = url;
             this.image = image;
         }
@@ -149,10 +150,13 @@ function generateRecipes(){
         }
 
         getPercentage(){
+            this.priority = 0;
             for(var j in this.ingredients){
                 this.priority += this.ingredients[j].priority;
             }
-            this.percentage = Math.round(((this.priority)/((this.ingredients.length)-1))*100);
+            var numIngredients = this.ingredients.length -1
+            this.percentage = Math.round(((this.priority)/numIngredients)*100);
+            this.ratio = this.percentage + "% = " + this.ratio + this.priority + " of " + numIngredients + " ingredients";
             return this.percentage;
         }
     }
