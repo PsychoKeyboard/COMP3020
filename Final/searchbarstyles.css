@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "Cookie Crisp";
+  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
+}
+
+:root {
+  --background: #fafce7ff;
+  --hover-bg: #fbb4398c;
+  --selected-bg: #fbb439ff;
+  --start-bg: #014e55d2;
+  --border: #8f2100ff;
+  --text-color: #2b2b2bff;
+  --main-title: #440202ff;
+  --second-title: #2c0000ff;
+  --clear-bg: #00000000;
+  --button-bg: #ffe2b1ff;
+}
+
+body {
+  background-color: var(--background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: var(--text-color);
+}
+
+button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.recipeButton {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  z-index: 2;
+}
+
+.recipeButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.recipeButton:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+.ingButton {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 2;
+}
+
+.ingButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.ingButton:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+}
+
+.search-wrapper {
+  border: 2px solid var(--border);
+  margin-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.45rem;
+  width: 55%;
+  margin-left: 25%;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.search-wrapper:hover {
+  transform: scale(1.1);
+}
+
+::placeholder {
+  color: var(--text-color);
+  size: 5px;
+  font-family: "Cookie Crisp";
+  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
+}
+
+input {
+  color: #363535d0;
+  size: 5px;
+  font-family: "Cookie Crisp";
+  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.6rem;
+  margin-top: 2.5rem;
+}
+
+.tile {
+  border: 2px solid var(--border);
+  padding: 1rem;
+  border-radius: 7.5px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+  background-color: var(--hover-bg);
+}
+
+.hide {
+  display: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  display: inline-block;
+
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--hover-bg);
+  width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Cookie Crisp";
+  font-size: 20px;
+}
+
+.dropdown-content a:hover {
+  font-size: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
