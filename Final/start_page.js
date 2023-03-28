@@ -136,6 +136,19 @@ var allRecipes;
 var priorityRecipesList;
 var selectedIngredients;
 
+var loaded=false;
+
+function generate(){
+    if(loaded == false){
+        generateAll();
+        loaded = true;
+    }
+    else{
+        allIngredients = sessionStorage.getItem(JSON.parse("ingredients"));
+        selectedIngredients = sessionStorage.getItem(JSON.parse("selectedIngredients"));
+    }
+}
+
 function generateAll(){
     class Ingredient{
         constructor(id, name, priority){
@@ -429,3 +442,10 @@ function generateAll(){
     sessionStorage.setItem("ingredients", JSON.stringify(allIngredients));
     sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
 }
+
+function updateIngredients(){
+    var selectedIngredients = JSON.parse(sessionStorage.getItem("selectedIngredients"));
+    document.getElementById("theList").innerHTML = displaySelected(selectedIngredients);
+    sessionStorage.setItem("selectedIngredients", JSON.stringify(selectedIngredients));
+}
+
