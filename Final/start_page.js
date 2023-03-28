@@ -136,16 +136,10 @@ var allRecipes;
 var priorityRecipesList;
 var selectedIngredients;
 
-var loaded=false;
-
-function generate(){
-    if(loaded == false){
+function generate(loaded){
+    if(sessionStorage.getItem("loaded") === null){
         generateAll();
-        loaded = true;
-    }
-    else{
-        allIngredients = sessionStorage.getItem(JSON.parse("ingredients"));
-        selectedIngredients = sessionStorage.getItem(JSON.parse("selectedIngredients"));
+        sessionStorage.setItem("loaded", true);
     }
 }
 
