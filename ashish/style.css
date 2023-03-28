@@ -22,18 +22,18 @@ body, html {
     
  }
 
-/*nav {
+nav {
 
     display: flex;
     justify-content: space-between;
     align-items: center;
- }*/
+ }
 
  nav img{
     width: 150px; 
     position: fixed;
     top: 0;
-    left: 50px;
+    left: 30px;
  }
 
 .nav-links{
@@ -62,9 +62,10 @@ body, html {
 nav i{
     color: white;
     position: fixed;
-    /*top: 10px;
-    left: 10px;*/
+    top: 20px;
+    left: 10px;
 }
+
 
 
 .nav-links ul li{
