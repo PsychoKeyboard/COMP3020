@@ -1,89 +1,84 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple</title>
+    <link rel="stylesheet" href="homepage_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="start_page.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/327e1b2d51.js" crossorigin="anonymous"></script>
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ripple</title>
-  <link rel="stylesheet" href="homepage_style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <script src="start_page.js"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/327e1b2d51.js" crossorigin="anonymous"></script>
-</head>
-
-<body onload="generate()">
-
-  <div class="bg">
-    <nav>
-      <button class="sidebarButton" type = "button" onclick="menu()">
-        <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
-      </button>
-      <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
-      <div class ="nav-links2" id ="navLinks">
-        <ul>
-          <button class="sidebarButton" type = "button" onclick="menu()">
-            <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
-          </button>
-            <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
-          <li><a href= "index.html">HOME</a></li>
-          <li><a href= "search_bar_page.html">SEARCH</a></li>
-          <li><a href= "Recipes.html">RECIPES</a></li>
-          <li><a href= "">ABOUT</a></li>
-        </ul>
+  <body onload="generate()">
+    <div class="bg">
+      <nav>
+        <button class="sidebarButton" type = "button" onclick="menu()">
+          <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
+        </button>
+        <a href = "index.html"><img src = "../Resourses/logo.png" ></a>
+        <div class ="nav-links2" id ="navLinks">
+          <ul>
+            <button class="sidebarButton" type = "button" onclick="menu()">
+              <i class="fas fa-bars fa-lg" style = "color:#000000;" ></i>
+            </button>
+              <li><a href = "index.html"><img src = "../Resourses/logo.png" ></a></li>
+            <li><a href= "index.html">HOME</a></li>
+            <li><a href= "search_bar_page.html">SEARCH</a></li>
+            <li><a href= "Recipes.html">RECIPES</a></li>
+            <li><a href= "">ABOUT</a></li>
+          </ul>
+        </div>
+      </nav>
+        
+      <div class="fridge" class="hover">
+        <a href="../Final/Everyday Items.html">
+          <img src = "../Resourses/fridge.png">
+        </a>
       </div>
-    </nav>
-    	
-    <div class="fridge" class="hover">
-      <a href="../Final/Everyday Items.html">
-        <img src = "../Resourses/fridge.png">
-      </a>
+
+      <div class="cabinets" class="hover">
+        <a href="../Final/Everyday Items.html">
+          <img src="../Resourses/cabinets.png">
+        </a>  
+      </div>
+
+      <a href = "../Final/search_bar_page.html">
+      <button class="search" type="button">
+        
+          <i class="fas fa-search fa-lg" style="color: #000000;"></i>
+        
+      </button>
+    </a>
+
+      <button class="recipeButton" onclick="search(); location.href='Recipes.html'">Get Recipes!</button>
+
+      <div class="dropdown">
+        <button class="ingButton" type = "button">
+        <i class="fas fa-shopping-basket" style="color: #000000;"></i>
+        Basket!
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+            <a id="theList"></a>
+        </div>
     </div>
 
-    <div class="cabinets" class="hover">
-      <a href="../Final/Everyday Items.html">
-        <img src="../Resourses/cabinets.png">
-      </a>  
-    </div>
+    <!-- JavaScript-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      var hidden = true;
 
-    <a href = "../Final/search_bar_page.html">
-    <button class="search" type="button">
-      
-        <i class="fas fa-search fa-lg" style="color: #000000;"></i>
-      
-    </button>
-  </a>
-
-    <button class="recipeButton" onclick="search(); location.href='Recipes.html'">Get Recipes!</button>
-
-    <div class="dropdown">
-      <button class="ingButton" type = "button">
-      <i class="fas fa-shopping-basket" style="color: #000000;"></i>
-      Basket!
-      </button>
-      <div id="myDropdown" class="dropdown-content">
-          <a id="theList"></a>
-      </div>
-  </div>
-
-  
-  <!-- JavaScript-->
-  <script>
-    var navLinks = document.getElementById("navLinks");
-    var hidden = true;
-
-    function menu(){
-      if(hidden){
-        navLinks.style.left = "0";
-        hidden = false;
+      function menu(){
+        if(hidden){
+          navLinks.style.left = "0";
+          hidden = false;
+        }
+        else{
+          navLinks.style.left = "-200px";
+          hidden = true;
+        }
       }
-      else{
-        navLinks.style.left = "-200px";
-        hidden = true;
-      }
-    }
-
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

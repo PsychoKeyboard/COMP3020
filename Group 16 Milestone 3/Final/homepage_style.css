@@ -1,89 +1,76 @@
 @font-face {
-  font-family: "Cookie Crisp";
-  src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
+font-family: "Cookie Crisp";
+src: url(../Resourses/cookie_crisp/Cookie\ Crisp.ttf);
 }
 
 body, html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Serif', serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Serif', serif;
 }
-  
+
 .bg {
 
-    /* The image used */
-    background-image: url("../Resourses/background.png");
-    
-    background-size: 100% 100%;
-    /* Full height */
-    height: 100%;
-    width: 100%;
-    /* Center and scale the image nicely 
-    background-position: center center;*/
-    background-repeat: no-repeat;
-    position: relative;
-    
- }
-
-nav {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* The image used */
+  background-image: url("../Resourses/background.png");
+  
+  background-size: 100% 100%;
+  /* Full height */
+  height: 100%;
+  width: 100%;
+  /* Center and scale the image nicely 
+  background-position: center center;*/
+  background-repeat: no-repeat;
+  position: relative;
+  
 }
 
- nav a img{
-    width: 150px; 
-    position: absolute;
-    top: 0;
-    left: 50px;
- }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a img{
+  width: 150px; 
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
 
 .nav-links2{
-
-    background-image: linear-gradient(
-            rgba(100,173,156, 1.0),
-            rgba(255, 11, 11, 0.2)
-          ),
-          url("../Resourses/sidebar.png");
-    
-        background-repeat: repeat;
-        background-attachment: fixed;
-        background-position: -100px;
-
-
-    position: fixed;
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    left: -200px;
-    text-align: left;
-    z-index: 5;
-    transition: 1s;
- }
-
-/*nav i{
-    color: white;
-    position: fixed;
-    top: 27px;
-    left: 10px;
-}*/
-
+  background-image: linear-gradient(
+          rgba(100,173,156, 1.0),
+          rgba(255, 11, 11, 0.2)
+        ),
+        url("../Resourses/sidebar.png");
+  
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: -100px;
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  top: 0;
+  left: -200px;
+  text-align: left;
+  z-index: 5;
+  transition: 1s;
+}
 
 .nav-links2 ul li{
-    position: relative;
-    list-style-type: none;
-    top: 50px;
-    padding: 8px 12px;
-    
+  position: relative;
+  list-style-type: none;
+  top: 50px;
+  padding: 8px 12px;
 }
 
 .nav-links2 ul li a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
 }
 
 .nav-links2 ul li a img{
@@ -94,39 +81,39 @@ nav {
 
 
 .bg .fridge img{
-    position: absolute;
-    /* 700 x 320 is close. aspect ratio == 0.457
-    height: 700px;
-    width: 320px;
-    left: 77%;*/
+  position: absolute;
+  /* 700 x 320 is close. aspect ratio == 0.457
+  height: 700px;
+  width: 320px;
+  left: 77%;*/
 
-    top: 10.4%;
-    left: 77.2%;
-    width: 20.75%;
-    height: 78.9%;
+  top: 10.4%;
+  left: 77.2%;
+  width: 20.75%;
+  height: 78.9%;
 
-    transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out; 
 }
 
 .fridge img:hover { 
-    transform: scale(1.1); 
-    z-index: 2;
+  transform: scale(1.1); 
+  z-index: 2;
 }
 
 .bg .cabinets img{
-    position: absolute;
+  position: absolute;
 
-    top: 60.9%;
-    left: 29.9%;
-    width: 46.7%;
-    height: 28.4%;
+  top: 60.9%;
+  left: 29.9%;
+  width: 46.7%;
+  height: 28.4%;
 
-    transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out; 
 }
 
 .cabinets img:hover { 
-    transform: scale(1.1); 
-    z-index: 2;
+  transform: scale(1.1); 
+  z-index: 2;
 }
 
 button{
@@ -161,70 +148,67 @@ button{
 }
 
 .sidebarButton{
-    position: absolute;
-    top: 5px;
-    left: 5px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 .sidebarButton:hover {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-    transform: translate3d(0, 2px, 0);
-  }
-  
-.sidebarButton:focus {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-  }
-
-.search{
-    position: absolute;
-    top: 5px;
-    right: 120px;
-}
-
-.search:hover {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-    transform: translate3d(0, 2px, 0);
-  }
-  
-  .search:focus {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-  }
-
-.recipeButton{
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-}
-
-.recipeButton:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
-.recipeButton:focus {
+.sidebarButton:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
+.search{
+position: fixed;
+top: 5px;
+right: 250px;
+}
+
+.search:hover {
+box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+transform: translate3d(0, 2px, 0);
+}
+
+.search:focus {
+box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.recipeButton{
+position: fixed;
+top: 5px;
+right: 120px;
+}
+
+.recipeButton:hover {
+box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+transform: translate3d(0, 2px, 0);
+}
+
+.recipeButton:focus {
+box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
 .ingButton {
-  position: fixed;
-  top: 5px;
-  right: 5px;
+position: fixed;
+top: 5px;
+right: 5px;
 }
 
 .ingButton:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
+box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+transform: translate3d(0, 2px, 0);
 }
 
 .ingButton:focus {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
-
-
-
 .dropdown {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   display: inline-block;
@@ -232,8 +216,8 @@ button{
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  background-color:#fbb439ff;
+  position: fixed;
+  background-color:#69A192;
   width: 190px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 5;
@@ -249,12 +233,12 @@ button{
 }
 
 .dropdown-content a:hover {
-  font-size: 20px;
+font-size: 20px;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 55px;
   right: 0;
 }
